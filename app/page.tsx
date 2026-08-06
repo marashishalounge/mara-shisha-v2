@@ -7,6 +7,10 @@ import Drinks from "./components/Drinks";
 import Beverages from "./components/Beverages";
 import Beers from "./components/beers";
 import Offers from "./components/Offers";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+
+
 
 export default function Home() {
   return (
@@ -29,6 +33,10 @@ export default function Home() {
       <Beers />
 
       <Offers />
+
+<Footer />
+
+<Contact />
 
     </main>
   );
