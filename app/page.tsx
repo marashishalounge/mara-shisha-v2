@@ -9,6 +9,7 @@ import Beers from "./components/beers";
 import Offers from "./components/Offers";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Reviews from "./components/Reviews";
 
 export default function Home() {
   return (
@@ -35,6 +36,8 @@ export default function Home() {
       <Contact />
 
       <Footer />
+
+      <Reviews />
 
     </main>
   );
