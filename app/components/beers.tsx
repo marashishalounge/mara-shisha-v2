@@ -1,11 +1,58 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const beerCategories = [
+  {
+    title: "🍻 Barril",
+    items: [
+      ["🍺 Amstel Caña", "1,80€"],
+      ["🍺 Amstel Jarra", "3,00€"],
+    ],
+  },
+  {
+    title: "🇪🇸 Nacionales",
+    items: [
+      ["🍺 Estrella Galicia 1/5", "1,90€"],
+      ["🍺 Amstel 1/3", "2,50€"],
+    ],
+  },
+  {
+    title: "🌍 Internacionales",
+    items: [
+      ["🍺 Heineken", "3,00€"],
+      ["🍺 Corona", "3,00€"],
+      ["🍺 Budweiser", "3,00€"],
+    ],
+  },
+];
+
 export default function Beers() {
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) =>
+      prev === beerCategories.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const previousSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? beerCategories.length - 1 : prev - 1
+    );
+  };
+
+  const beer = beerCategories[current];
+
   return (
     <section
       id="cervezas"
       className="bg-zinc-950 py-20 px-6"
     >
-
       <div className="max-w-6xl mx-auto">
+
+        {/* TITULO */}
 
         <h2
           className="text-4xl font-bold text-center mb-4"
@@ -14,7 +61,6 @@ export default function Beers() {
           🍺 Cervezas
         </h2>
 
-
         <p
           className="text-center mb-14"
           style={{ color: "#B08D57" }}
@@ -22,161 +68,177 @@ export default function Beers() {
           Una selección de cervezas frías para disfrutar en Mara Shisha Lounge.
         </p>
 
+        {/* CARRUSEL */}
 
+        <div className="relative max-w-xl mx-auto">
 
-        <div className="grid gap-8 md:grid-cols-3">
+          {/* TARJETA */}
 
-
-
-          {/* BARRIL */}
-
-          <div className="bg-black border border-[#B08D57]/40 rounded-2xl p-8">
+          <div
+            className="
+              bg-black
+              border
+              border-[#B08D57]/40
+              rounded-3xl
+              p-8
+              md:p-10
+              min-h-[330px]
+              flex
+              flex-col
+              justify-center
+            "
+          >
 
             <h3
-              className="text-2xl font-semibold mb-6 text-center"
+              className="text-3xl font-semibold mb-8 text-center"
               style={{ color: "#B08D57" }}
             >
-              🍻 Barril
+              {beer.title}
             </h3>
 
+            <div className="space-y-5">
 
-            <div className="flex justify-between mb-4">
+              {beer.items.map(([name, price]) => (
 
-              <span>
-                🍺 Amstel Caña
-              </span>
+                <div
+                  key={name}
+                  className="
+                    flex
+                    justify-between
+                    items-center
+                    border-b
+                    border-[#B08D57]/20
+                    pb-3
+                  "
+                >
 
-              <span style={{ color: "#B08D57" }}>
-                1,80€
-              </span>
+                  <span
+                    style={{ color: "#e6d8bb" }}
+                  >
+                    {name}
+                  </span>
+
+                  <span
+                    className="font-semibold"
+                    style={{ color: "#B08D57" }}
+                  >
+                    {price}
+                  </span>
+
+                </div>
+
+              ))}
 
             </div>
-
-
-            <div className="flex justify-between">
-
-              <span>
-                🍺 Amstel Jarra
-              </span>
-
-              <span style={{ color: "#B08D57" }}>
-                3,00€
-              </span>
-
-            </div>
-
 
           </div>
 
+          {/* FLECHA IZQUIERDA */}
 
+          <button
+            type="button"
+            onClick={previousSlide}
+            aria-label="Cerveza anterior"
+            className="
+              absolute
+              left-[-18px]
+              md:left-[-60px]
+              top-1/2
+              -translate-y-1/2
+              w-12
+              h-12
+              rounded-full
+              border
+              border-[#B08D57]/60
+              bg-black
+              flex
+              items-center
+              justify-center
+              hover:bg-[#B08D57]
+              hover:text-black
+              transition
+              z-10
+            "
+            style={{
+              color: "#B08D57",
+            }}
+          >
+            <ChevronLeft size={26} />
+          </button>
 
+          {/* FLECHA DERECHA */}
 
-
-          {/* NACIONALES */}
-
-          <div className="bg-black border border-[#B08D57]/40 rounded-2xl p-8">
-
-            <h3
-              className="text-2xl font-semibold mb-6 text-center"
-              style={{ color: "#B08D57" }}
-            >
-              🇪🇸 Nacionales
-            </h3>
-
-
-            <div className="flex justify-between mb-4">
-
-              <span>
-                🍺 Estrella Galicia 1/5
-              </span>
-
-              <span style={{ color: "#B08D57" }}>
-                1,90€
-              </span>
-
-            </div>
-
-
-            <div className="flex justify-between">
-
-              <span>
-                🍺 Amstel 1/3
-              </span>
-
-              <span style={{ color: "#B08D57" }}>
-                2,50€
-              </span>
-
-            </div>
-
-
-          </div>
-
-
-
-
-
-          {/* INTERNACIONALES */}
-
-          <div className="bg-black border border-[#B08D57]/40 rounded-2xl p-8">
-
-            <h3
-              className="text-2xl font-semibold mb-6 text-center"
-              style={{ color: "#B08D57" }}
-            >
-              🌍 Internacionales
-            </h3>
-
-
-            <div className="flex justify-between mb-4">
-
-              <span>
-                🍺 Heineken
-              </span>
-
-              <span style={{ color: "#B08D57" }}>
-                3,00€
-              </span>
-
-            </div>
-
-
-            <div className="flex justify-between mb-4">
-
-              <span>
-                🍺 Corona
-              </span>
-
-              <span style={{ color: "#B08D57" }}>
-                3,00€
-              </span>
-
-            </div>
-
-
-            <div className="flex justify-between">
-
-              <span>
-                🍺 Budweiser
-              </span>
-
-              <span style={{ color: "#B08D57" }}>
-                3,00€
-              </span>
-
-            </div>
-
-
-          </div>
-
-
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="Siguiente cerveza"
+            className="
+              absolute
+              right-[-18px]
+              md:right-[-60px]
+              top-1/2
+              -translate-y-1/2
+              w-12
+              h-12
+              rounded-full
+              border
+              border-[#B08D57]/60
+              bg-black
+              flex
+              items-center
+              justify-center
+              hover:bg-[#B08D57]
+              hover:text-black
+              transition
+              z-10
+            "
+            style={{
+              color: "#B08D57",
+            }}
+          >
+            <ChevronRight size={26} />
+          </button>
 
         </div>
 
+        {/* INDICADORES */}
+
+        <div className="flex justify-center gap-2 mt-8">
+
+          {beerCategories.map((_, index) => (
+
+            <button
+              key={index}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={`Ir a categoría ${index + 1}`}
+              className="h-2 rounded-full transition-all duration-300"
+              style={{
+                width:
+                  current === index
+                    ? "32px"
+                    : "8px",
+                backgroundColor:
+                  current === index
+                    ? "#B08D57"
+                    : "#5f5545",
+              }}
+            />
+
+          ))}
+
+        </div>
+
+        {/* CONTADOR */}
+
+        <p
+          className="text-center text-xs mt-4"
+          style={{ color: "#8f856f" }}
+        >
+          {current + 1} / {beerCategories.length}
+        </p>
 
       </div>
-
-
     </section>
   );
 }
