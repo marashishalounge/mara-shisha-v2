@@ -4,8 +4,13 @@ import {
   MapPin,
   Clock3,
 } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Contact() {
+  const { language } = useLanguage();
+
+  const isEnglish = language === "en";
+
   return (
     <section
       id="contacto"
@@ -28,11 +33,10 @@ export default function Contact() {
             className="mt-4 text-4xl font-bold md:text-5xl"
             style={{ color: "#B08D57" }}
           >
-            Contacto
+            {isEnglish ? "Contact" : "Contacto"}
           </h2>
 
         </div>
-
 
         {/* MAPA */}
 
@@ -44,7 +48,7 @@ export default function Contact() {
               className="text-lg font-medium"
               style={{ color: "#B08D57" }}
             >
-              Mapa
+              {isEnglish ? "Map" : "Mapa"}
             </h3>
 
           </div>
@@ -52,29 +56,27 @@ export default function Contact() {
           <div className="overflow-hidden rounded-2xl">
 
             <iframe
-              src="https://www.google.com/maps?q=Camino+de+los+Sastres+30+Córdoba&output=embed"
+              src="https://www.google.com/maps?q=Camino+de+los+Sastres+30+C%C3%B3rdoba&output=embed"
               width="100%"
               height="420"
               loading="lazy"
               style={{ border: 0 }}
               allowFullScreen
-              title="Mara Shisha Lounge - Mapa"
+              title="Mara Shisha Lounge - Map"
             />
 
           </div>
 
         </div>
 
-
         {/* INFORMACIÓN */}
 
         <div className="mx-auto max-w-2xl space-y-4">
 
-
           {/* DIRECCIÓN - CLICABLE */}
 
           <a
-            href="https://www.google.com/maps/dir//Mara+Lounge,+Cam.+de+los+Sastres,+30,+14004+Córdoba/"
+            href="https://www.google.com/maps/dir//Mara+Lounge,+Cam.+de+los+Sastres,+30,+14004+C%C3%B3rdoba/"
             target="_blank"
             rel="noopener noreferrer"
             className="block rounded-2xl border border-[#B08D57]/20 bg-zinc-950/70 px-6 py-5 transition duration-300 hover:border-[#B08D57]/50 hover:bg-zinc-900"
@@ -98,7 +100,7 @@ export default function Contact() {
                   className="font-medium"
                   style={{ color: "#B08D57" }}
                 >
-                  Dirección
+                  {isEnglish ? "Address" : "Dirección"}
                 </p>
 
                 <p
@@ -113,7 +115,6 @@ export default function Contact() {
             </div>
 
           </a>
-
 
           {/* WHATSAPP */}
 
@@ -162,7 +163,6 @@ export default function Contact() {
             </div>
 
           </a>
-
 
           {/* INSTAGRAM */}
 
@@ -227,7 +227,6 @@ export default function Contact() {
 
           </a>
 
-
           {/* HORARIO */}
 
           <div className="rounded-2xl border border-[#B08D57]/20 bg-zinc-950/70 px-6 py-6 transition duration-300 hover:border-[#B08D57]/40">
@@ -250,7 +249,7 @@ export default function Contact() {
                   className="font-medium"
                   style={{ color: "#B08D57" }}
                 >
-                  Horario
+                  {isEnglish ? "Opening hours" : "Horario"}
                 </p>
 
                 <div
@@ -259,37 +258,37 @@ export default function Contact() {
                 >
 
                   <div className="flex justify-between gap-4">
-                    <span>Lunes</span>
-                    <span>Descanso</span>
+                    <span>{isEnglish ? "Monday" : "Lunes"}</span>
+                    <span>{isEnglish ? "Closed" : "Descanso"}</span>
                   </div>
 
                   <div className="flex justify-between gap-4">
-                    <span>Martes</span>
+                    <span>{isEnglish ? "Tuesday" : "Martes"}</span>
                     <span>19:00 - 02:00</span>
                   </div>
 
                   <div className="flex justify-between gap-4">
-                    <span>Miércoles</span>
+                    <span>{isEnglish ? "Wednesday" : "Miércoles"}</span>
                     <span>19:00 - 02:00</span>
                   </div>
 
                   <div className="flex justify-between gap-4">
-                    <span>Jueves</span>
+                    <span>{isEnglish ? "Thursday" : "Jueves"}</span>
                     <span>19:00 - 02:00</span>
                   </div>
 
                   <div className="flex justify-between gap-4">
-                    <span>Viernes</span>
+                    <span>{isEnglish ? "Friday" : "Viernes"}</span>
                     <span>19:00 - 03:00</span>
                   </div>
 
                   <div className="flex justify-between gap-4">
-                    <span>Sábado</span>
+                    <span>{isEnglish ? "Saturday" : "Sábado"}</span>
                     <span>19:00 - 03:00</span>
                   </div>
 
                   <div className="flex justify-between gap-4">
-                    <span>Domingo</span>
+                    <span>{isEnglish ? "Sunday" : "Domingo"}</span>
                     <span>19:00 - 02:00</span>
                   </div>
 
