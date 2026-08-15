@@ -40,6 +40,7 @@ export const translations = {
       titulo: "Nuestro Menú",
       subtitulo:
         "Descubre nuestra selección de shishas, copas, cervezas, bebidas y ofertas especiales.",
+
       shishas: "Shishas",
       bebidas: "Bebidas",
       copas: "Copas",
@@ -93,13 +94,35 @@ export const translations = {
 
     shishas: {
       titulo: "SHISHAS",
-      clasica: "Shisha clásica",
-      premium: "Shisha premium",
-      precioClasica: "10 €",
-      ofertaDos: "2 por 15 €",
-      precioPremium: "18 €",
-      baseHelada: "Base helada",
-      tabacoNegro: "Tabaco negro",
+
+      descripcion:
+        "Una experiencia creada para disfrutar aromas, sabores y momentos únicos.",
+
+      normal: "Shisha Normal",
+      normalPreparacion: "Preparación clásica",
+      normalBase: "Base tradicional",
+      normalCarbon: "Carbón preparado al momento",
+      normalSabores:
+        "Elige tus sabores favoritos en nuestra sección Sabores",
+
+      normalDescripcion:
+        "Perfecta para quienes buscan una fumada equilibrada, suave y personalizada con sus sabores favoritos.",
+
+      premium: "Shisha Premium",
+      premiumBase: "Base helada",
+      premiumCarbon: "Carbón premium",
+      premiumTabaco: "Tabaco negro seleccionado",
+      premiumPreparacion: "Preparación exclusiva",
+      premiumFrutal: "Toque frutal premium",
+      premiumMezclas: "Mezclas especiales de 2 o 3 sabores",
+
+      experienciaPremium: "Experiencia Premium",
+
+      premiumDescripcion:
+        "Una preparación exclusiva para amantes de sabores intensos, frescura extrema y combinaciones únicas.",
+
+      premiumFinal:
+        "Una experiencia superior creada para quienes buscan una shisha elegante, intensa y memorable.",
     },
 
     flavors: {
@@ -222,6 +245,7 @@ export const translations = {
       titulo: "Our Menu",
       subtitulo:
         "Discover our selection of shishas, drinks, beers, beverages and special offers.",
+
       shishas: "Shishas",
       bebidas: "Beverages",
       copas: "Drinks",
@@ -275,13 +299,35 @@ export const translations = {
 
     shishas: {
       titulo: "SHISHAS",
-      clasica: "Classic shisha",
-      premium: "Premium shisha",
-      precioClasica: "€10",
-      ofertaDos: "2 for €15",
-      precioPremium: "€18",
-      baseHelada: "Ice base",
-      tabacoNegro: "Dark tobacco",
+
+      descripcion:
+        "An experience created to enjoy aromas, flavours and unforgettable moments.",
+
+      normal: "Classic Shisha",
+      normalPreparacion: "Classic preparation",
+      normalBase: "Traditional base",
+      normalCarbon: "Freshly prepared charcoal",
+      normalSabores:
+        "Choose your favourite flavours in our Flavours section",
+
+      normalDescripcion:
+        "Perfect for those looking for a balanced, smooth and personalised session with their favourite flavours.",
+
+      premium: "Premium Shisha",
+      premiumBase: "Ice-cold base",
+      premiumCarbon: "Premium charcoal",
+      premiumTabaco: "Selected dark tobacco",
+      premiumPreparacion: "Exclusive preparation",
+      premiumFrutal: "Premium fruity touch",
+      premiumMezclas: "Special mixes of 2 or 3 flavours",
+
+      experienciaPremium: "Premium Experience",
+
+      premiumDescripcion:
+        "An exclusive preparation for lovers of intense flavours, extreme freshness and unique combinations.",
+
+      premiumFinal:
+        "A superior experience created for those looking for an elegant, intense and memorable shisha.",
     },
 
     flavors: {
