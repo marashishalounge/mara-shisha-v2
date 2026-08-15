@@ -28,22 +28,67 @@ export const translations = {
     },
 
     hero: {
-      titulo: "MARA SHISHA LOUNGE",
+      titulo: "Mara Shisha Lounge",
       subtitulo: "Tu lugar para desconectar",
       descripcion:
-        "Shishas, copas, música y buen ambiente en Córdoba.",
+        "Vive una experiencia única entre aromas, sabores y el mejor ambiente.",
       botonMenu: "Ver menú",
       botonContacto: "Contactar",
     },
 
     menu: {
-      titulo: "NUESTRO MENÚ",
-      subtitulo: "Descubre todo lo que tenemos para ti",
+      titulo: "Nuestro Menú",
+      subtitulo:
+        "Descubre nuestra selección de shishas, copas, cervezas, bebidas y ofertas especiales.",
       shishas: "Shishas",
       bebidas: "Bebidas",
       copas: "Copas",
       snacks: "Snacks",
       sabores: "Sabores",
+
+      items: {
+        shishas: {
+          title: "Shishas",
+          description:
+            "Sabores clásicos, premium y especiales preparados al momento.",
+          link: "Ver Shishas",
+        },
+
+        copas: {
+          title: "Copas",
+          description:
+            "Ginebras, rones y whiskys seleccionados para acompañar cada experiencia.",
+          link: "Ver Copas",
+        },
+
+        bebidas: {
+          title: "Bebidas",
+          description:
+            "Refrescos, zumos, energéticas y bebidas calientes.",
+          link: "Ver Bebidas",
+        },
+
+        cervezas: {
+          title: "Cervezas",
+          description:
+            "De barril, nacionales e internacionales.",
+          link: "Ver Cervezas",
+        },
+
+        ofertas: {
+          title: "Ofertas",
+          description:
+            "Promociones especiales para compartir shishas y cervezas.",
+          link: "Ver Ofertas",
+        },
+
+        snacks: {
+          title: "Snacks",
+          description:
+            "Aperitivos y platos para compartir en un ambiente relajado.",
+          link: "Ver Snacks",
+        },
+      },
     },
 
     shishas: {
@@ -165,22 +210,67 @@ export const translations = {
     },
 
     hero: {
-      titulo: "MARA SHISHA LOUNGE",
+      titulo: "Mara Shisha Lounge",
       subtitulo: "Your place to disconnect",
       descripcion:
-        "Shishas, drinks, music and great vibes in Córdoba.",
+        "Enjoy a unique experience surrounded by flavours, aromas and the best atmosphere.",
       botonMenu: "View menu",
       botonContacto: "Contact us",
     },
 
     menu: {
-      titulo: "OUR MENU",
-      subtitulo: "Discover everything we have for you",
+      titulo: "Our Menu",
+      subtitulo:
+        "Discover our selection of shishas, drinks, beers, beverages and special offers.",
       shishas: "Shishas",
       bebidas: "Beverages",
       copas: "Drinks",
       snacks: "Snacks",
       sabores: "Flavours",
+
+      items: {
+        shishas: {
+          title: "Shishas",
+          description:
+            "Classic, premium and special flavours prepared fresh to order.",
+          link: "View Shishas",
+        },
+
+        copas: {
+          title: "Drinks",
+          description:
+            "Selected gins, rums and whiskies to complement every experience.",
+          link: "View Drinks",
+        },
+
+        bebidas: {
+          title: "Beverages",
+          description:
+            "Soft drinks, juices, energy drinks and hot beverages.",
+          link: "View Beverages",
+        },
+
+        cervezas: {
+          title: "Beers",
+          description:
+            "Draft, national and international beers.",
+          link: "View Beers",
+        },
+
+        ofertas: {
+          title: "Offers",
+          description:
+            "Special promotions for sharing shishas and beers.",
+          link: "View Offers",
+        },
+
+        snacks: {
+          title: "Snacks",
+          description:
+            "Appetizers and dishes to share in a relaxed atmosphere.",
+          link: "View Snacks",
+        },
+      },
     },
 
     shishas: {
