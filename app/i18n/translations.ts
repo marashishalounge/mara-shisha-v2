@@ -1,4 +1,3 @@
-
 export type Language = "es" | "en";
 
 export const translations = {
@@ -136,11 +135,41 @@ export const translations = {
       titulo: "COPAS",
       subtitulo: "Nuestra selección de bebidas",
       energia: "+1 € con bebida energética",
+
+      ginebras: "Ginebras",
+      rones: "Rones",
+      whisky: "Whisky",
+
+      categoriaAnterior: "Categoría anterior",
+      siguienteCategoria: "Siguiente categoría",
+      irCategoria: "Ir a categoría",
     },
 
     beverages: {
       titulo: "BEBIDAS",
-      subtitulo: "Refrescos y bebidas",
+      subtitulo:
+        "Refrescos, bebidas frías y una selección de tés para acompañar tu experiencia.",
+
+      frias: "Bebidas frías",
+
+      cola: "Colas",
+      nestea: "Nestea",
+      aquarius: "Aquarius",
+      zumos: "Zumos",
+      aguaGas: "Agua con gas",
+      agua: "Agua",
+      energeticas: "Bebidas energéticas",
+
+      calientes: "Bebidas calientes",
+
+      teVerde: "Té verde",
+      teMoruno: "Té moruno",
+      teLimon: "Té limón",
+      infusiones: "Infusiones",
+
+      anterior: "Bebida anterior",
+      siguiente: "Siguiente bebida",
+      irCategoria: "Ir a bebida",
     },
 
     beers: {
@@ -341,11 +370,41 @@ export const translations = {
       titulo: "DRINKS",
       subtitulo: "Our selection of drinks",
       energia: "+€1 with energy drink",
+
+      ginebras: "Gins",
+      rones: "Rums",
+      whisky: "Whisky",
+
+      categoriaAnterior: "Previous category",
+      siguienteCategoria: "Next category",
+      irCategoria: "Go to category",
     },
 
     beverages: {
       titulo: "BEVERAGES",
-      subtitulo: "Soft drinks and beverages",
+      subtitulo:
+        "Soft drinks, cold beverages and a selection of teas to accompany your experience.",
+
+      frias: "Cold drinks",
+
+      cola: "Colas",
+      nestea: "Nestea",
+      aquarius: "Aquarius",
+      zumos: "Juices",
+      aguaGas: "Sparkling water",
+      agua: "Water",
+      energeticas: "Energy drinks",
+
+      calientes: "Hot drinks",
+
+      teVerde: "Green tea",
+      teMoruno: "Moroccan tea",
+      teLimon: "Lemon tea",
+      infusiones: "Herbal teas",
+
+      anterior: "Previous drink",
+      siguiente: "Next drink",
+      irCategoria: "Go to drink",
     },
 
     beers: {

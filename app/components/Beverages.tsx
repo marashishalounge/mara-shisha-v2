@@ -2,37 +2,40 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const beverageCategories = [
-  {
-    id: "frias",
-    emoji: "🧊",
-    title: "Bebidas frías",
-    items: [
-      ["🥤 Colas", "2,50€"],
-      ["🍹 Nestea", "2,50€"],
-      ["🧃 Aquarius", "2,50€"],
-      ["🍊 Zumos", "2,50€"],
-      ["💦 Agua con gas", "2,50€"],
-      ["🚰 Agua", "2,00€"],
-      ["⚡ Bebidas energéticas", "3,00€"],
-    ],
-  },
-  {
-    id: "calientes",
-    emoji: "☕",
-    title: "Bebidas calientes",
-    items: [
-      ["🍵 Té verde", "2,00€"],
-      ["🌿 Té moruno", "2,00€"],
-      ["🍋 Té limón", "2,00€"],
-      ["🌸 Infusiones", "2,00€"],
-    ],
-  },
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Beverages() {
+  const { t } = useLanguage();
+
   const [current, setCurrent] = useState(0);
+
+  const beverageCategories = [
+    {
+      id: "frias",
+      emoji: "🧊",
+      title: t.beverages.frias,
+      items: [
+        ["🥤 Colas", "2,50€"],
+        ["🫖 Nestea", "2,50€"],
+        ["🧃 Aquarius", "2,50€"],
+        ["🧃 Zumos", "2,50€"],
+        ["💦 Agua con gas", "2,50€"],
+        ["🚰 Agua", "2,00€"],
+        ["⚡ Bebidas energéticas", "3,00€"],
+      ],
+    },
+    {
+      id: "calientes",
+      emoji: "☕",
+      title: t.beverages.calientes,
+      items: [
+        ["🍵 Té verde", "2,00€"],
+        ["🌿 Té moruno", "2,00€"],
+        ["🍋 Té limón", "2,00€"],
+        ["🌸 Infusiones", "2,00€"],
+      ],
+    },
+  ];
 
   const nextSlide = () => {
     setCurrent((prev) =>
@@ -63,11 +66,11 @@ export default function Beverages() {
             className="text-5xl font-bold mb-4"
             style={{ color: "var(--bronze)" }}
           >
-            🥤 Bebidas
+            🥤 {t.beverages.titulo}
           </h2>
 
           <p className="text-zinc-400 text-lg">
-            Refrescos, bebidas frías y una selección de tés para acompañar tu experiencia.
+            {t.beverages.subtitulo}
           </p>
 
         </div>
@@ -97,7 +100,7 @@ export default function Beverages() {
             "
           >
 
-            {/* CABECERA DE TARJETA */}
+            {/* CABECERA */}
 
             <div className="text-center mb-8">
 
@@ -158,7 +161,7 @@ export default function Beverages() {
           <button
             type="button"
             onClick={previousSlide}
-            aria-label="Bebida anterior"
+            aria-label={t.beverages.anterior}
             className="
               absolute
               left-[-18px]
@@ -191,7 +194,7 @@ export default function Beverages() {
           <button
             type="button"
             onClick={nextSlide}
-            aria-label="Siguiente bebida"
+            aria-label={t.beverages.siguiente}
             className="
               absolute
               right-[-18px]
@@ -231,7 +234,7 @@ export default function Beverages() {
               key={index}
               type="button"
               onClick={() => setCurrent(index)}
-              aria-label={`Ir a bebida ${index + 1}`}
+              aria-label={`${t.beverages.irCategoria} ${index + 1}`}
               className="h-2 rounded-full transition-all duration-300"
               style={{
                 width:

@@ -2,46 +2,49 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const drinkCategories = [
-  {
-    title: "🍸 Ginebras",
-    items: [
-      ["Bombay Sapphire", "6€"],
-      ["Beefeater", "6€"],
-      ["Puerto de Indias", "6€"],
-      ["Larios", "6€"],
-      ["Seagrams", "8€"],
-      ["Seagrams 0'0", "8€"],
-    ],
-  },
-  {
-    title: "🥃 Rones",
-    items: [
-      ["Barceló", "6€"],
-      ["Brugal", "6€"],
-      ["Legendario", "6€"],
-      ["Bacardí", "6€"],
-      ["Cacique", "6€"],
-      ["Negrita", "6€"],
-    ],
-  },
-  {
-    title: "🥃 Whisky",
-    items: [
-      ["Red Label", "6€"],
-      ["Dewar's White Label", "6€"],
-      ["Ballantines", "6€"],
-      ["DYC", "6€"],
-      ["Jägermeister", "7€"],
-      ["Jack Daniel's", "8€"],
-      ["Black Label", "8€"],
-      ["Chivas Regal", "8€"],
-    ],
-  },
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Drinks() {
+  const { t } = useLanguage();
+
+  const drinkCategories = [
+    {
+      title: t.drinks.ginebras,
+      items: [
+        ["Bombay Sapphire", "6€"],
+        ["Beefeater", "6€"],
+        ["Puerto de Indias", "6€"],
+        ["Larios", "6€"],
+        ["Seagrams", "8€"],
+        ["Seagrams 0'0", "8€"],
+      ],
+    },
+    {
+      title: t.drinks.rones,
+      items: [
+        ["Barceló", "6€"],
+        ["Brugal", "6€"],
+        ["Legendario", "6€"],
+        ["Bacardí", "6€"],
+        ["Cacique", "6€"],
+        ["Negrita", "6€"],
+      ],
+    },
+    {
+      title: t.drinks.whisky,
+      items: [
+        ["Red Label", "6€"],
+        ["Dewar's White Label", "6€"],
+        ["Ballantines", "6€"],
+        ["DYC", "6€"],
+        ["Jägermeister", "7€"],
+        ["Jack Daniel's", "8€"],
+        ["Black Label", "8€"],
+        ["Chivas Regal", "8€"],
+      ],
+    },
+  ];
+
   const [current, setCurrent] = useState(0);
 
   const nextSlide = () => {
@@ -80,15 +83,14 @@ export default function Drinks() {
             className="text-5xl font-bold mt-4 mb-6"
             style={{ color: "#B08D57" }}
           >
-            🍸 Copas
+            {t.drinks.titulo}
           </h2>
 
           <p
             className="max-w-3xl mx-auto leading-8"
             style={{ color: "#d8c59a" }}
           >
-            Una selección de copas premium para acompañar
-            tu experiencia.
+            {t.drinks.subtitulo}
           </p>
 
         </div>
@@ -160,7 +162,7 @@ export default function Drinks() {
           <button
             type="button"
             onClick={previousSlide}
-            aria-label="Categoría anterior"
+            aria-label={t.drinks.categoriaAnterior}
             className="
               absolute
               left-[-18px]
@@ -193,7 +195,7 @@ export default function Drinks() {
           <button
             type="button"
             onClick={nextSlide}
-            aria-label="Siguiente categoría"
+            aria-label={t.drinks.siguienteCategoria}
             className="
               absolute
               right-[-18px]
@@ -233,7 +235,7 @@ export default function Drinks() {
               key={index}
               type="button"
               onClick={() => setCurrent(index)}
-              aria-label={`Ir a categoría ${index + 1}`}
+              aria-label={`${t.drinks.irCategoria} ${index + 1}`}
               className="h-2 rounded-full transition-all duration-300"
               style={{
                 width:
@@ -276,7 +278,7 @@ export default function Drinks() {
             className="italic"
             style={{ color: "#d8c59a" }}
           >
-            ✨ Si eliges bebida energética, suplemento +1€
+            {t.drinks.energia}
           </p>
 
         </div>
