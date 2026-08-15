@@ -7,11 +7,12 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const reviews = [
   {
     name: "Sergio",
-    text: "Siempre que venimos mi grupo y yo se siente como en casa. Muchas gracias por tenernos como clientes, ¡lo pasamos genial! 👍",
+    text: "Siempre que venimos mi grupo y yo se siente como en casa. Muchas gracias por tenernos como clientes, ¡lo pasamos genial!",
   },
   {
     name: "sandra nicole b ortos",
@@ -28,6 +29,10 @@ const reviews = [
 ];
 
 export default function Reviews() {
+  const { language } = useLanguage();
+
+  const isEnglish = language === "en";
+
   const [currentReview, setCurrentReview] = useState(0);
 
   const nextReview = () => {
@@ -69,22 +74,25 @@ export default function Reviews() {
             className="uppercase tracking-[5px] text-sm"
             style={{ color: "#B08D57" }}
           >
-            La experiencia Mara
+            {isEnglish ? "The Mara Experience" : "La experiencia Mara"}
           </span>
 
           <h2
             className="text-4xl md:text-5xl font-bold mt-4"
             style={{ color: "#B08D57" }}
           >
-            Nuestros clientes opinan
+            {isEnglish
+              ? "What Our Customers Say"
+              : "Nuestros clientes opinan"}
           </h2>
 
           <p
             className="max-w-2xl mx-auto mt-5 leading-8"
             style={{ color: "#d8c59a" }}
           >
-            La mejor forma de conocer Mara es escuchar a quienes
-            ya han vivido la experiencia.
+            {isEnglish
+              ? "The best way to discover Mara is to hear from those who have already experienced it."
+              : "La mejor forma de conocer Mara es escuchar a quienes ya han vivido la experiencia."}
           </p>
 
           {/* VALORACIÓN */}
@@ -117,7 +125,7 @@ export default function Reviews() {
             className="mt-3 text-sm"
             style={{ color: "#8f856f" }}
           >
-            Reseñas de Google
+            {isEnglish ? "Google Reviews" : "Reseñas de Google"}
           </p>
 
         </div>
@@ -131,7 +139,9 @@ export default function Reviews() {
           <button
             type="button"
             onClick={previousReview}
-            aria-label="Reseña anterior"
+            aria-label={
+              isEnglish ? "Previous review" : "Reseña anterior"
+            }
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 z-10 w-11 h-11 rounded-full border border-[#B08D57]/50 bg-zinc-950 flex items-center justify-center hover:bg-[#B08D57] hover:text-black transition"
             style={{ color: "#B08D57" }}
           >
@@ -187,7 +197,9 @@ export default function Reviews() {
                 className="text-xs mt-2"
                 style={{ color: "#8f856f" }}
               >
-                Reseña de Google · 5/5
+                {isEnglish
+                  ? "Google Review · 5/5"
+                  : "Reseña de Google · 5/5"}
               </p>
 
             </div>
@@ -199,7 +211,9 @@ export default function Reviews() {
           <button
             type="button"
             onClick={nextReview}
-            aria-label="Siguiente reseña"
+            aria-label={
+              isEnglish ? "Next review" : "Siguiente reseña"
+            }
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 z-10 w-11 h-11 rounded-full border border-[#B08D57]/50 bg-zinc-950 flex items-center justify-center hover:bg-[#B08D57] hover:text-black transition"
             style={{ color: "#B08D57" }}
           >
@@ -217,7 +231,11 @@ export default function Reviews() {
               key={index}
               type="button"
               onClick={() => setCurrentReview(index)}
-              aria-label={`Ver reseña ${index + 1}`}
+              aria-label={
+                isEnglish
+                  ? `View review ${index + 1}`
+                  : `Ver reseña ${index + 1}`
+              }
               className="transition-all duration-300 rounded-full"
               style={{
                 width: currentReview === index ? "24px" : "8px",
@@ -245,7 +263,10 @@ export default function Reviews() {
           >
             <ExternalLink size={20} />
 
-            Comparte tu experiencia Mara
+            {isEnglish
+              ? "Share Your Mara Experience"
+              : "Comparte tu experiencia Mara"}
+
           </a>
 
         </div>
