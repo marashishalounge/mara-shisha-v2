@@ -13,7 +13,7 @@ export default function Beers() {
     language === "en"
       ? [
           {
-            title: "🇬🇧 Draft",
+            title: "🍺 Draft",
             items: [
               ["🍺 Amstel Pint", "€1.80"],
               ["🍺 Amstel Jug", "€3.00"],
