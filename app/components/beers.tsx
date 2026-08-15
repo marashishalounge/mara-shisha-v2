@@ -2,34 +2,63 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const beerCategories = [
-  {
-    title: "🍻 Barril",
-    items: [
-      ["🍺 Amstel Caña", "1,80€"],
-      ["🍺 Amstel Jarra", "3,00€"],
-    ],
-  },
-  {
-    title: "🇪🇸 Nacionales",
-    items: [
-      ["🍺 Estrella Galicia 1/5", "1,90€"],
-      ["🍺 Amstel 1/3", "2,50€"],
-    ],
-  },
-  {
-    title: "🌍 Internacionales",
-    items: [
-      ["🍺 Heineken", "3,00€"],
-      ["🍺 Corona", "3,00€"],
-      ["🍺 Budweiser", "3,00€"],
-    ],
-  },
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Beers() {
+  const { language } = useLanguage();
+
   const [current, setCurrent] = useState(0);
+
+  const beerCategories =
+    language === "en"
+      ? [
+          {
+            title: "🇬🇧 Draft",
+            items: [
+              ["🍺 Amstel Pint", "€1.80"],
+              ["🍺 Amstel Jug", "€3.00"],
+            ],
+          },
+          {
+            title: "🇪🇸 National",
+            items: [
+              ["🍺 Estrella Galicia 1/5", "€1.90"],
+              ["🍺 Amstel 1/3", "€2.50"],
+            ],
+          },
+          {
+            title: "🌍 International",
+            items: [
+              ["🍺 Heineken", "€3.00"],
+              ["🍺 Corona", "€3.00"],
+              ["🍺 Budweiser", "€3.00"],
+            ],
+          },
+        ]
+      : [
+          {
+            title: "🍺 Barril",
+            items: [
+              ["🍺 Amstel Caña", "1,80€"],
+              ["🍺 Amstel Jarra", "3,00€"],
+            ],
+          },
+          {
+            title: "🇪🇸 Nacionales",
+            items: [
+              ["🍺 Estrella Galicia 1/5", "1,90€"],
+              ["🍺 Amstel 1/3", "2,50€"],
+            ],
+          },
+          {
+            title: "🌍 Internacionales",
+            items: [
+              ["🍺 Heineken", "3,00€"],
+              ["🍺 Corona", "3,00€"],
+              ["🍺 Budweiser", "3,00€"],
+            ],
+          },
+        ];
 
   const nextSlide = () => {
     setCurrent((prev) =>
@@ -58,14 +87,16 @@ export default function Beers() {
           className="text-4xl font-bold text-center mb-4"
           style={{ color: "#B08D57" }}
         >
-          🍺 Cervezas
+          🍺 {language === "en" ? "Beers" : "Cervezas"}
         </h2>
 
         <p
           className="text-center mb-14"
           style={{ color: "#B08D57" }}
         >
-          Una selección de cervezas frías para disfrutar en Mara Shisha Lounge.
+          {language === "en"
+            ? "Enjoy our selection of cold beers at Mara Shisha Lounge."
+            : "Una selección de cervezas frías para disfrutar en Mara Shisha Lounge."}
         </p>
 
         {/* CARRUSEL */}
@@ -138,7 +169,11 @@ export default function Beers() {
           <button
             type="button"
             onClick={previousSlide}
-            aria-label="Cerveza anterior"
+            aria-label={
+              language === "en"
+                ? "Previous beer category"
+                : "Categoría de cerveza anterior"
+            }
             className="
               absolute
               left-[-18px]
@@ -171,7 +206,11 @@ export default function Beers() {
           <button
             type="button"
             onClick={nextSlide}
-            aria-label="Siguiente cerveza"
+            aria-label={
+              language === "en"
+                ? "Next beer category"
+                : "Siguiente categoría de cerveza"
+            }
             className="
               absolute
               right-[-18px]
@@ -211,7 +250,11 @@ export default function Beers() {
               key={index}
               type="button"
               onClick={() => setCurrent(index)}
-              aria-label={`Ir a categoría ${index + 1}`}
+              aria-label={
+                language === "en"
+                  ? `Go to beer category ${index + 1}`
+                  : `Ir a categoría ${index + 1}`
+              }
               className="h-2 rounded-full transition-all duration-300"
               style={{
                 width:
