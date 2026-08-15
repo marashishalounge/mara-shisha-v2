@@ -1,4 +1,11 @@
+
+"use client";
+
+import { useLanguage } from "../i18n/LanguageContext";
+
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="inicio"
@@ -17,14 +24,14 @@ export default function Hero() {
           className="text-5xl md:text-7xl font-bold mb-6"
           style={{ color: "#B08D57" }}
         >
-          Mara Shisha Lounge
+          {t.hero.titulo}
         </h2>
 
         <p
           className="text-xl md:text-2xl mb-10"
           style={{ color: "#B08D57" }}
         >
-          Vive una experiencia única entre aromas, sabores y el mejor ambiente.
+          {t.hero.descripcion}
         </p>
 
         <a
@@ -35,7 +42,7 @@ export default function Hero() {
             borderColor: "#B08D57",
           }}
         >
-          Ver menú
+          {t.hero.botonMenu}
         </a>
 
       </div>
