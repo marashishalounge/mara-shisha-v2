@@ -43,44 +43,29 @@ const menuItems = [
 ] as const;
 
 export default function Menu() {
-  const [current, setCurrent] =
-    useState(0);
+  const [current, setCurrent] = useState(0);
 
-  const {
-    t,
-    language,
-  } = useLanguage();
+  const { t, language } = useLanguage();
+
+  const item = menuItems[current];
+
+  const itemText = t.menu.items[item.key];
 
   const nextSlide = () => {
-    setCurrent((prev) => {
-      if (
-        prev >=
-        menuItems.length - 1
-      ) {
-        return 0;
-      }
-
-      return prev + 1;
-    });
+    setCurrent((prev) =>
+      prev >= menuItems.length - 1
+        ? 0
+        : prev + 1
+    );
   };
 
   const prevSlide = () => {
-    setCurrent((prev) => {
-      if (prev <= 0) {
-        return (
-          menuItems.length - 1
-        );
-      }
-
-      return prev - 1;
-    });
+    setCurrent((prev) =>
+      prev <= 0
+        ? menuItems.length - 1
+        : prev - 1
+    );
   };
-
-  const item =
-    menuItems[current];
-
-  const itemText =
-    t.menu.items[item.key];
 
   return (
     <section
@@ -93,18 +78,16 @@ export default function Menu() {
 
         <h2
           className="text-4xl font-bold text-center mb-4"
-          style={{
-            color: "#B08D57",
-          }}
+          style={{ color: "#B08D57" }}
         >
           {t.menu.titulo}
         </h2>
 
+        {/* DESCRIPCION */}
+
         <p
           className="text-center mb-12"
-          style={{
-            color: "#B08D57",
-          }}
+          style={{ color: "#B08D57" }}
         >
           {t.menu.subtitulo}
         </p>
@@ -151,9 +134,7 @@ export default function Menu() {
 
             <h3
               className="text-3xl font-semibold mb-5"
-              style={{
-                color: "#B08D57",
-              }}
+              style={{ color: "#B08D57" }}
             >
               {itemText.title}
             </h3>
@@ -162,9 +143,7 @@ export default function Menu() {
 
             <p
               className="leading-7 max-w-md mx-auto"
-              style={{
-                color: "#B08D57",
-              }}
+              style={{ color: "#B08D57" }}
             >
               {itemText.description}
             </p>
@@ -173,9 +152,7 @@ export default function Menu() {
 
             <div
               className="mt-7 text-sm uppercase tracking-[3px]"
-              style={{
-                color: "#8f856f",
-              }}
+              style={{ color: "#8f856f" }}
             >
               {itemText.link}
             </div>
@@ -212,13 +189,9 @@ export default function Menu() {
               transition
               z-10
             "
-            style={{
-              color: "#B08D57",
-            }}
+            style={{ color: "#B08D57" }}
           >
-            <ChevronLeft
-              size={26}
-            />
+            <ChevronLeft size={26} />
           </button>
 
           {/* FLECHA DERECHA */}
@@ -251,13 +224,9 @@ export default function Menu() {
               transition
               z-10
             "
-            style={{
-              color: "#B08D57",
-            }}
+            style={{ color: "#B08D57" }}
           >
-            <ChevronRight
-              size={26}
-            />
+            <ChevronRight size={26} />
           </button>
 
         </div>
@@ -266,37 +235,29 @@ export default function Menu() {
 
         <div className="flex justify-center items-center gap-2 mt-8">
 
-          {menuItems.map(
-            (_, index) => (
-              <button
-                key={index}
-                type="button"
-                onClick={() =>
-                  setCurrent(index)
-                }
-                aria-label={
-                  language === "en"
-                    ? `Go to card ${
-                        index + 1
-                      }`
-                    : `Ir a tarjeta ${
-                        index + 1
-                      }`
-                }
-                className="h-2 rounded-full transition-all duration-300"
-                style={{
-                  width:
-                    current === index
-                      ? "32px"
-                      : "8px",
-                  backgroundColor:
-                    current === index
-                      ? "#B08D57"
-                      : "#5f5545",
-                }}
-              />
-            )
-          )}
+          {menuItems.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={
+                language === "en"
+                  ? `Go to card ${index + 1}`
+                  : `Ir a tarjeta ${index + 1}`
+              }
+              className="h-2 rounded-full transition-all duration-300"
+              style={{
+                width:
+                  current === index
+                    ? "32px"
+                    : "8px",
+                backgroundColor:
+                  current === index
+                    ? "#B08D57"
+                    : "#5f5545",
+              }}
+            />
+          ))}
 
         </div>
 
@@ -304,12 +265,9 @@ export default function Menu() {
 
         <p
           className="text-center text-xs mt-4"
-          style={{
-            color: "#8f856f",
-          }}
+          style={{ color: "#8f856f" }}
         >
-          {current + 1} /{" "}
-          {menuItems.length}
+          {current + 1} / {menuItems.length}
         </p>
 
       </div>
