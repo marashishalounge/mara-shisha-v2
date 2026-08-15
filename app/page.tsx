@@ -1,3 +1,4 @@
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Menu from "./components/Menu";
@@ -10,35 +11,41 @@ import Offers from "./components/Offers";
 import Contact from "./components/Contact";
 import Reviews from "./components/Reviews";
 import Footer from "./components/Footer";
+import Roulette from "./components/Roulette";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white">
+    <LanguageProvider>
+      <main className="bg-black text-white">
 
-      <Navbar />
+        <Navbar />
 
-      <Hero />
+        <Hero />
 
-      <Menu />
+        <Roulette />
 
-      <Shishas />
+        <Menu />
 
-      <Flavors />
+        <Shishas />
 
-      <Drinks />
+        <Flavors />
 
-      <Beverages />
+        <Drinks />
 
-      <Beers />
+        <Beverages />
 
-      <Offers />
+        <Beers />
 
-      <Contact />
+        <Offers />
 
-      <Reviews />
+        <Contact />
 
-      <Footer />
+        <Reviews />
 
-    </main>
+        <Footer />
+
+      </main>
+    </LanguageProvider>
   );
 }
