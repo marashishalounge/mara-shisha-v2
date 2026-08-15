@@ -2,140 +2,248 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const favorites = [
   {
     name: "💎 Love 66",
-    badge: "⭐ Más pedido",
-    description:
-      "Una mezcla tropical, dulce y refrescante. Uno de los sabores favoritos de nuestros clientes.",
+    badge: {
+      es: "⭐ Más pedido",
+      en: "⭐ Most popular",
+    },
+    description: {
+      es: "Una mezcla tropical, dulce y refrescante. Uno de los sabores favoritos de nuestros clientes.",
+      en: "A tropical, sweet and refreshing blend. One of our customers' favourite flavours.",
+    },
   },
   {
     name: "🍓 Frutos Rojos",
-    badge: "⭐ Más pedido",
-    description:
-      "Una combinación intensa de frutas rojas con un aroma elegante y equilibrado.",
+    badge: {
+      es: "⭐ Más pedido",
+      en: "⭐ Most popular",
+    },
+    description: {
+      es: "Una combinación intensa de frutas rojas con un aroma elegante y equilibrado.",
+      en: "An intense combination of red berries with an elegant and balanced aroma.",
+    },
   },
   {
     name: "🥭 Mango",
-    badge: "⭐ Más pedido",
-    description:
-      "Dulce y tropical, perfecto para una fumada suave y agradable.",
+    badge: {
+      es: "⭐ Más pedido",
+      en: "⭐ Most popular",
+    },
+    description: {
+      es: "Dulce y tropical, perfecto para una fumada suave y agradable.",
+      en: "Sweet and tropical, perfect for a smooth and enjoyable session.",
+    },
   },
   {
     name: "🍉 Sandía",
-    badge: "⭐ Más pedido",
-    description:
-      "Fresca, ligera y refrescante para disfrutar en cualquier momento.",
+    badge: {
+      es: "⭐ Más pedido",
+      en: "⭐ Most popular",
+    },
+    description: {
+      es: "Fresca, ligera y refrescante para disfrutar en cualquier momento.",
+      en: "Fresh, light and refreshing to enjoy at any time.",
+    },
   },
   {
     name: "🍬 Chicle",
-    badge: "⭐ Especial",
-    description:
-      "Un sabor divertido y diferente con un toque dulce y nostálgico.",
+    badge: {
+      es: "⭐ Especial",
+      en: "⭐ Special",
+    },
+    description: {
+      es: "Un sabor divertido y diferente con un toque dulce y nostálgico.",
+      en: "A fun and different flavour with a sweet and nostalgic touch.",
+    },
   },
 ];
 
 const flavors = [
   {
     name: "💎 Love 66",
-    badge: "Tropical",
-    description:
-      "Mezcla tropical con un equilibrio perfecto entre dulzor y frescura.",
+    badge: {
+      es: "Tropical",
+      en: "Tropical",
+    },
+    description: {
+      es: "Mezcla tropical con un equilibrio perfecto entre dulzor y frescura.",
+      en: "A tropical blend with the perfect balance between sweetness and freshness.",
+    },
   },
   {
     name: "🍓 Frutos Rojos",
-    badge: "Frutal",
-    description:
-      "Aroma intenso de frutos rojos con una fumada elegante.",
+    badge: {
+      es: "Frutal",
+      en: "Fruity",
+    },
+    description: {
+      es: "Aroma intenso de frutos rojos con una fumada elegante.",
+      en: "An intense red berry aroma with an elegant smoking experience.",
+    },
   },
   {
-    name: "❄️ Menta",
-    badge: "Fresco",
-    description:
-      "Sensación fría y limpia, perfecta para combinar.",
+    name: "🌿 Menta",
+    badge: {
+      es: "Fresco",
+      en: "Fresh",
+    },
+    description: {
+      es: "Sensación fría y limpia, perfecta para combinar.",
+      en: "A cool and clean sensation, perfect for mixing.",
+    },
   },
   {
     name: "🥭 Mango",
-    badge: "Tropical",
-    description:
-      "Dulce y exótico con un sabor suave.",
+    badge: {
+      es: "Tropical",
+      en: "Tropical",
+    },
+    description: {
+      es: "Dulce y exótico con un sabor suave.",
+      en: "Sweet and exotic with a smooth flavour.",
+    },
   },
   {
-    name: "🍈 Maracuyá",
-    badge: "Exótico",
-    description:
-      "Toque cítrico tropical con mucha personalidad.",
+    name: "🥭 Maracuyá",
+    badge: {
+      es: "Exótico",
+      en: "Exotic",
+    },
+    description: {
+      es: "Toque cítrico tropical con mucha personalidad.",
+      en: "A tropical citrus touch with plenty of character.",
+    },
   },
   {
     name: "🌿 Menta Suave",
-    badge: "Ligero",
-    description:
-      "Refrescante pero más delicado que la menta clásica.",
+    badge: {
+      es: "Ligero",
+      en: "Light",
+    },
+    description: {
+      es: "Refrescante pero más delicado que la menta clásica.",
+      en: "Refreshing but more delicate than classic mint.",
+    },
   },
   {
     name: "🍇 Uva",
-    badge: "Intenso",
-    description:
-      "Dulce y profundo con un aroma elegante.",
+    badge: {
+      es: "Intenso",
+      en: "Intense",
+    },
+    description: {
+      es: "Dulce y profundo con un aroma elegante.",
+      en: "Sweet and deep with an elegant aroma.",
+    },
   },
   {
     name: "🫐 Arándanos",
-    badge: "Premium",
-    description:
-      "Sabor suave, dulce y muy aromático.",
+    badge: {
+      es: "Premium",
+      en: "Premium",
+    },
+    description: {
+      es: "Sabor suave, dulce y muy aromático.",
+      en: "Smooth, sweet and highly aromatic flavour.",
+    },
   },
   {
     name: "🌱 Hierbabuena",
-    badge: "Natural",
-    description:
-      "Frescor herbal con un toque diferente.",
+    badge: {
+      es: "Natural",
+      en: "Natural",
+    },
+    description: {
+      es: "Frescor herbal con un toque diferente.",
+      en: "Herbal freshness with a distinctive touch.",
+    },
   },
   {
     name: "🍉 Sandía",
-    badge: "Refrescante",
-    description:
-      "Ligera, dulce y muy agradable.",
+    badge: {
+      es: "Refrescante",
+      en: "Refreshing",
+    },
+    description: {
+      es: "Ligera, dulce y muy agradable.",
+      en: "Light, sweet and very enjoyable.",
+    },
   },
   {
     name: "🍈 Melón",
-    badge: "Dulce",
-    description:
-      "Suave y equilibrado para cualquier combinación.",
+    badge: {
+      es: "Dulce",
+      en: "Sweet",
+    },
+    description: {
+      es: "Suave y equilibrado para cualquier combinación.",
+      en: "Smooth and balanced for any combination.",
+    },
   },
   {
     name: "🍍 Piña",
-    badge: "Caribe",
-    description:
-      "Tropical con un toque ácido muy agradable.",
+    badge: {
+      es: "Caribe",
+      en: "Caribbean",
+    },
+    description: {
+      es: "Tropical con un toque ácido muy agradable.",
+      en: "Tropical with a pleasant tangy touch.",
+    },
   },
   {
     name: "🥥 Coco",
-    badge: "Exótico",
-    description:
-      "Cremoso y diferente para mezclas especiales.",
+    badge: {
+      es: "Exótico",
+      en: "Exotic",
+    },
+    description: {
+      es: "Cremoso y diferente para mezclas especiales.",
+      en: "Creamy and distinctive for special mixes.",
+    },
   },
   {
     name: "🍋 Lima",
-    badge: "Cítrico",
-    description:
-      "Fresca e intensa con un toque ácido.",
+    badge: {
+      es: "Cítrico",
+      en: "Citrus",
+    },
+    description: {
+      es: "Fresca e intensa con un toque ácido.",
+      en: "Fresh and intense with a tangy touch.",
+    },
   },
   {
     name: "🍬 Chicle",
-    badge: "Especial",
-    description:
-      "Dulce y divertido, ideal para mezclas creativas.",
+    badge: {
+      es: "Especial",
+      en: "Special",
+    },
+    description: {
+      es: "Dulce y divertido, ideal para mezclas creativas.",
+      en: "Sweet and fun, ideal for creative mixes.",
+    },
   },
   {
-    name: "🧀🍰 Tarta de Queso",
-    badge: "Exclusivo",
-    description:
-      "Una mezcla cremosa inspirada en un clásico de la repostería.",
+    name: "🧀 Tarta de Queso",
+    badge: {
+      es: "Exclusivo",
+      en: "Exclusive",
+    },
+    description: {
+      es: "Una mezcla cremosa inspirada en un clásico de la repostería.",
+      en: "A creamy blend inspired by a classic dessert.",
+    },
   },
 ];
 
 export default function Flavors() {
+  const { language, t } = useLanguage();
+
   const [favoriteCurrent, setFavoriteCurrent] = useState(0);
   const [flavorCurrent, setFlavorCurrent] = useState(0);
 
@@ -188,22 +296,19 @@ export default function Flavors() {
             className="text-5xl font-bold mt-4"
             style={{ color: "#B08D57" }}
           >
-            Sabores
+            {t.flavors.titulo}
           </h2>
 
           <p
             className="mt-5 max-w-3xl mx-auto"
             style={{ color: "#d8c59a" }}
           >
-            Descubre nuestra selección de sabores
-            clásicos, exóticos y exclusivos.
+            {t.flavors.subtitulo}
           </p>
 
         </div>
 
-        {/* =========================================
-            SABORES MÁS PEDIDOS
-        ========================================= */}
+        {/* SABORES MÁS PEDIDOS */}
 
         <div className="mb-20">
 
@@ -211,12 +316,12 @@ export default function Flavors() {
             className="text-3xl font-bold text-center mb-10"
             style={{ color: "#B08D57" }}
           >
-            ⭐ Sabores más pedidos
+            {language === "es"
+              ? "⭐ Sabores más pedidos"
+              : "⭐ Most popular flavours"}
           </h3>
 
           <div className="relative max-w-xl mx-auto">
-
-            {/* TARJETA */}
 
             <div
               className="
@@ -238,7 +343,7 @@ export default function Flavors() {
                 className="text-xs uppercase tracking-wider"
                 style={{ color: "#d8c59a" }}
               >
-                {favorite.badge}
+                {favorite.badge[language]}
               </span>
 
               <h4
@@ -252,7 +357,7 @@ export default function Flavors() {
                 className="text-base leading-7 max-w-md mx-auto"
                 style={{ color: "#e6d8bb" }}
               >
-                {favorite.description}
+                {favorite.description[language]}
               </p>
 
             </div>
@@ -262,7 +367,11 @@ export default function Flavors() {
             <button
               type="button"
               onClick={previousFavorite}
-              aria-label="Sabor más pedido anterior"
+              aria-label={
+                language === "es"
+                  ? "Sabor más pedido anterior"
+                  : "Previous popular flavour"
+              }
               className="
                 absolute
                 left-[-18px]
@@ -293,7 +402,11 @@ export default function Flavors() {
             <button
               type="button"
               onClick={nextFavorite}
-              aria-label="Siguiente sabor más pedido"
+              aria-label={
+                language === "es"
+                  ? "Siguiente sabor más pedido"
+                  : "Next popular flavour"
+              }
               className="
                 absolute
                 right-[-18px]
@@ -331,7 +444,11 @@ export default function Flavors() {
                 key={index}
                 type="button"
                 onClick={() => setFavoriteCurrent(index)}
-                aria-label={`Ir al sabor más pedido ${index + 1}`}
+                aria-label={
+                  language === "es"
+                    ? `Ir al sabor más pedido ${index + 1}`
+                    : `Go to popular flavour ${index + 1}`
+                }
                 className="h-2 rounded-full transition-all duration-300"
                 style={{
                   width:
@@ -358,20 +475,18 @@ export default function Flavors() {
 
         </div>
 
-        {/* =========================================
-            TODOS LOS SABORES
-        ========================================= */}
+        {/* TODOS LOS SABORES */}
 
         <h3
           className="text-3xl font-bold text-center mb-10"
           style={{ color: "#B08D57" }}
         >
-          Todos nuestros sabores
+          {language === "es"
+            ? "Todos nuestros sabores"
+            : "All our flavours"}
         </h3>
 
         <div className="relative max-w-xl mx-auto">
-
-          {/* TARJETA */}
 
           <div
             className="
@@ -400,14 +515,14 @@ export default function Flavors() {
               className="text-sm"
               style={{ color: "#d8c59a" }}
             >
-              {flavor.badge}
+              {flavor.badge[language]}
             </span>
 
             <p
               className="mt-5 text-base leading-7 max-w-md mx-auto"
               style={{ color: "#e6d8bb" }}
             >
-              {flavor.description}
+              {flavor.description[language]}
             </p>
 
           </div>
@@ -417,7 +532,11 @@ export default function Flavors() {
           <button
             type="button"
             onClick={previousFlavor}
-            aria-label="Sabor anterior"
+            aria-label={
+              language === "es"
+                ? "Sabor anterior"
+                : "Previous flavour"
+            }
             className="
               absolute
               left-[-18px]
@@ -448,7 +567,11 @@ export default function Flavors() {
           <button
             type="button"
             onClick={nextFlavor}
-            aria-label="Siguiente sabor"
+            aria-label={
+              language === "es"
+                ? "Siguiente sabor"
+                : "Next flavour"
+            }
             className="
               absolute
               right-[-18px]
@@ -486,7 +609,11 @@ export default function Flavors() {
               key={index}
               type="button"
               onClick={() => setFlavorCurrent(index)}
-              aria-label={`Ir al sabor ${index + 1}`}
+              aria-label={
+                language === "es"
+                  ? `Ir al sabor ${index + 1}`
+                  : `Go to flavour ${index + 1}`
+              }
               className="h-2 rounded-full transition-all duration-300"
               style={{
                 width:
