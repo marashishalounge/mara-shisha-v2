@@ -1,35 +1,35 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const premios = [
   {
-    nombre: "CHUPITO",
+    clave: "chupito",
     emoji: "🥃",
     probabilidad: 6,
     ganador: true,
   },
   {
-    nombre: "CUBO DE ESTRELLA GALICIA",
+    clave: "cubo",
     emoji: "🍺",
     probabilidad: 5,
     ganador: true,
   },
   {
-    nombre: "COPA",
+    clave: "copa",
     emoji: "🍸",
     probabilidad: 2,
     ganador: true,
   },
   {
-    nombre: "SHISHA CLÁSICA",
+    clave: "shishaClasica",
     emoji: "💨",
     probabilidad: 2,
     ganador: true,
   },
   {
-    nombre: "SIGUE PARTICIPANDO",
+    clave: "sigueParticipando",
     emoji: "✨",
     probabilidad: 85,
     ganador: false,
@@ -53,6 +53,8 @@ const coloresConfeti = [
 ];
 
 export default function Roulette() {
+  const { t } = useLanguage();
+
   const [girando, setGirando] = useState(false);
   const [resultado, setResultado] = useState("");
   const [rotacion, setRotacion] = useState(0);
@@ -71,6 +73,28 @@ export default function Roulette() {
       clearTimeout(temporizador);
     };
   }, [celebracion]);
+
+  function obtenerNombrePremio(clave: string) {
+    switch (clave) {
+      case "chupito":
+        return t.roulette.chupito;
+
+      case "cubo":
+        return t.roulette.cubo;
+
+      case "copa":
+        return t.roulette.copa;
+
+      case "shishaClasica":
+        return t.roulette.shishaClasica;
+
+      case "sigueParticipando":
+        return t.roulette.sigueParticipando;
+
+      default:
+        return clave;
+    }
+  }
 
   function seleccionarPremio() {
     const numero = Math.random() * 100;
@@ -119,7 +143,9 @@ export default function Roulette() {
 
     setTimeout(() => {
       setResultado(
-        premios[indiceGanador].nombre
+        obtenerNombrePremio(
+          premios[indiceGanador].clave
+        )
       );
 
       setGirando(false);
@@ -311,11 +337,11 @@ export default function Roulette() {
         </p>
 
         <h2 className="text-4xl md:text-5xl font-bold text-[#B08D57]">
-          RULETA MARA
+          {t.roulette.titulo}
         </h2>
 
         <p className="text-gray-300 mt-4">
-          Gira y descubre tu premio
+          {t.roulette.subtitulo}
         </p>
 
         <div className="relative mx-auto mt-10 w-80 h-80">
@@ -339,7 +365,7 @@ export default function Roulette() {
 
               return (
                 <div
-                  key={premio.nombre}
+                  key={premio.clave}
                   className="absolute left-1/2 top-1/2 w-32 text-center"
                   style={{
                     transform: `
@@ -358,7 +384,7 @@ export default function Roulette() {
                     </div>
 
                     <div className="text-[9px] md:text-[10px] font-black leading-tight tracking-wide text-white drop-shadow-[0_2px_3px_rgba(0,0,0,0.95)]">
-                      {premio.nombre}
+                      {obtenerNombrePremio(premio.clave)}
                     </div>
 
                   </div>
@@ -397,8 +423,8 @@ export default function Roulette() {
           className="mt-10 px-10 py-4 rounded-full bg-[#B08D57] text-black font-black tracking-widest hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {girando
-            ? "GIRANDO..."
-            : "GIRAR RULETA"}
+            ? t.roulette.girando
+            : t.roulette.boton}
         </button>
 
         {resultado && (
@@ -412,8 +438,8 @@ export default function Roulette() {
 
             <p className="text-[#B08D57] text-sm tracking-widest">
               {celebracion
-                ? "🎉 ¡HAS GANADO! 🎉"
-                : "TU PREMIO"}
+                ? `🎉 ${t.roulette.ganado} 🎉`
+                : t.roulette.premio}
             </p>
 
             <p className="text-2xl font-bold mt-3">
@@ -422,7 +448,7 @@ export default function Roulette() {
 
             {celebracion && (
               <p className="text-[#D4AF37] mt-3 font-bold">
-                ¡ENHORABUENA!
+                {t.roulette.enhorabuena}
               </p>
             )}
 
