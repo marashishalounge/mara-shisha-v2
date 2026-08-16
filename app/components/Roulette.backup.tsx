@@ -2,32 +2,36 @@
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
-import { supabase } from "../../lib/supabase";
 
 const premios = [
   {
     clave: "chupito",
     emoji: "🥃",
+    probabilidad: 6,
     ganador: true,
   },
   {
     clave: "cuboEstrellaGalicia",
     emoji: "🍺",
+    probabilidad: 5,
     ganador: true,
   },
   {
     clave: "copa",
-    emoji: "🍹",
+    emoji: "🍸",
+    probabilidad: 2,
     ganador: true,
   },
   {
     clave: "shishaClasica",
     emoji: "💨",
+    probabilidad: 2,
     ganador: true,
   },
   {
     clave: "sigueParticipando",
     emoji: "✨",
+    probabilidad: 85,
     ganador: false,
   },
 ];
@@ -55,7 +59,6 @@ export default function Roulette() {
   const [resultado, setResultado] = useState("");
   const [rotacion, setRotacion] = useState(0);
   const [celebracion, setCelebracion] = useState(false);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!celebracion) {
@@ -93,20 +96,23 @@ export default function Roulette() {
     }
   }
 
-  function obtenerDispositivoId() {
-    const clave = "mara_dispositivo_id";
+  function seleccionarPremio() {
+    const numero = Math.random() * 100;
 
-    let dispositivoId = localStorage.getItem(clave);
+    let acumulado = 0;
 
-    if (!dispositivoId) {
-      dispositivoId = crypto.randomUUID();
-      localStorage.setItem(clave, dispositivoId);
+    for (let i = 0; i < premios.length; i++) {
+      acumulado += premios[i].probabilidad;
+
+      if (numero < acumulado) {
+        return i;
+      }
     }
 
-    return dispositivoId;
+    return premios.length - 1;
   }
 
-  async function girar() {
+  function girar() {
     if (girando) {
       return;
     }
@@ -114,81 +120,40 @@ export default function Roulette() {
     setGirando(true);
     setResultado("");
     setCelebracion(false);
-    setError("");
 
-    try {
-      const dispositivoId = obtenerDispositivoId();
+    const indiceGanador = seleccionarPremio();
 
-      const { data, error: errorSupabase } = await supabase.rpc(
-        "jugar_ruleta_dispositivo",
-        {
-          p_dispositivo_id: dispositivoId,
-        }
-      );
+    const centroSector =
+      indiceGanador * 72 + 36;
 
-      if (errorSupabase) {
-        console.error("Error Supabase:", errorSupabase);
-        throw new Error(errorSupabase.message);
-      }
+    const posicionFinal =
+      360 - centroSector;
 
-      if (!data?.ok) {
-        setError(
-          data?.mensaje ||
-            "No puedes realizar otra tirada en este momento."
-        );
+    const vueltasCompletas = 8 * 360;
 
-        setGirando(false);
-        return;
-      }
+    const rotacionBase =
+      Math.ceil(rotacion / 360) * 360;
 
-      const clavePremio = data.premio;
+    const nuevaRotacion =
+      rotacionBase +
+      vueltasCompletas +
+      posicionFinal;
 
-      const indiceGanador = premios.findIndex(
-        (premio) => premio.clave === clavePremio
-      );
+    setRotacion(nuevaRotacion);
 
-      if (indiceGanador === -1) {
-        throw new Error(
-          "Supabase devolvió un premio no reconocido."
-        );
-      }
-
-      const centroSector = indiceGanador * 72 + 36;
-
-      const posicionFinal = 360 - centroSector;
-
-      const vueltasCompletas = 8 * 360;
-
-      const rotacionBase =
-        Math.ceil(rotacion / 360) * 360;
-
-      const nuevaRotacion =
-        rotacionBase +
-        vueltasCompletas +
-        posicionFinal;
-
-      setRotacion(nuevaRotacion);
-
-      setTimeout(() => {
-        setResultado(
-          obtenerNombrePremio(clavePremio)
-        );
-
-        setGirando(false);
-
-        if (data.ganador === true) {
-          setCelebracion(true);
-        }
-      }, 6000);
-    } catch (error) {
-      console.error(error);
-
-      setError(
-        "No hemos podido realizar la tirada. Inténtalo de nuevo."
+    setTimeout(() => {
+      setResultado(
+        obtenerNombrePremio(
+          premios[indiceGanador].clave
+        )
       );
 
       setGirando(false);
-    }
+
+      if (premios[indiceGanador].ganador) {
+        setCelebracion(true);
+      }
+    }, 6000);
   }
 
   const sectores = colores
@@ -205,11 +170,18 @@ export default function Roulette() {
       id="ruleta"
       className="relative w-full bg-black text-white py-16 px-4 overflow-hidden"
     >
+
       {celebracion && (
         <div className="pointer-events-none fixed inset-0 z-[100] overflow-hidden">
+
+          {/* FLASH INICIAL */}
+
           <div className="absolute inset-0 animate-mara-flash" />
 
+          {/* CONFETI SUPER DENSO */}
+
           <div className="absolute inset-0">
+
             {Array.from({ length: 220 }).map((_, index) => {
               const izquierda =
                 (index * 47.37) % 100;
@@ -250,7 +222,10 @@ export default function Roulette() {
                 />
               );
             })}
+
           </div>
+
+          {/* FUEGO ARTIFICIAL 1 */}
 
           <div
             className="absolute left-[20%] top-[25%] w-2 h-2"
@@ -275,6 +250,8 @@ export default function Roulette() {
             )}
           </div>
 
+          {/* FUEGO ARTIFICIAL 2 */}
+
           <div
             className="absolute right-[20%] top-[22%] w-2 h-2"
             style={{
@@ -298,6 +275,8 @@ export default function Roulette() {
             )}
           </div>
 
+          {/* FUEGO ARTIFICIAL 3 */}
+
           <div
             className="absolute left-[50%] top-[18%] w-2 h-2"
             style={{
@@ -320,6 +299,8 @@ export default function Roulette() {
               )
             )}
           </div>
+
+          {/* DESTELLOS */}
 
           {Array.from({ length: 35 }).map(
             (_, index) => {
@@ -345,10 +326,12 @@ export default function Roulette() {
               );
             }
           )}
+
         </div>
       )}
 
       <div className="max-w-4xl mx-auto text-center">
+
         <p className="text-[#B08D57] tracking-[0.3em] text-sm mb-3">
           MARA SHISHA LOUNGE
         </p>
@@ -362,6 +345,7 @@ export default function Roulette() {
         </p>
 
         <div className="relative mx-auto mt-10 w-80 h-80">
+
           <div
             className="relative w-full h-full rounded-full border-8 border-[#B08D57] flex items-center justify-center"
             style={{
@@ -374,6 +358,7 @@ export default function Roulette() {
                 : "none",
             }}
           >
+
             {premios.map((premio, index) => {
               const angulo =
                 index * 72 + 36;
@@ -391,23 +376,27 @@ export default function Roulette() {
                     `,
                   }}
                 >
+
                   <div className="flex flex-col items-center justify-center">
+
                     <div className="text-3xl leading-none mb-2">
                       {premio.emoji}
                     </div>
 
                     <div className="text-[9px] md:text-[10px] font-black leading-tight tracking-wide text-white drop-shadow-[0_2px_3px_rgba(0,0,0,0.95)]">
-                      {obtenerNombrePremio(
-                        premio.clave
-                      )}
+                      {obtenerNombrePremio(premio.clave)}
                     </div>
+
                   </div>
+
                 </div>
               );
             })}
 
             <div className="w-28 h-28 rounded-full bg-black border-4 border-[#B08D57] flex items-center justify-center z-10">
+
               <div className="text-center">
+
                 <div className="text-[#B08D57] font-black text-xl">
                   MARA
                 </div>
@@ -415,13 +404,17 @@ export default function Roulette() {
                 <div className="text-white text-xs tracking-widest">
                   LOUNGE
                 </div>
+
               </div>
+
             </div>
+
           </div>
 
           <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-[#B08D57] text-4xl font-bold z-20">
             ▼
           </div>
+
         </div>
 
         <button
@@ -434,14 +427,6 @@ export default function Roulette() {
             : t.roulette.boton}
         </button>
 
-        {error && (
-          <div className="mt-8 p-5 rounded-2xl border border-red-900 bg-[#111]">
-            <p className="text-red-400 font-bold">
-              {error}
-            </p>
-          </div>
-        )}
-
         {resultado && (
           <div
             className={`mt-8 p-6 rounded-2xl border bg-[#111] ${
@@ -450,6 +435,7 @@ export default function Roulette() {
                 : "border-[#B08D57]"
             }`}
           >
+
             <p className="text-[#B08D57] text-sm tracking-widest">
               {celebracion
                 ? `🎉 ${t.roulette.ganado} 🎉`
@@ -465,8 +451,10 @@ export default function Roulette() {
                 {t.roulette.enhorabuena}
               </p>
             )}
+
           </div>
         )}
+
       </div>
 
       <style jsx>{`
@@ -557,6 +545,7 @@ export default function Roulette() {
           }
         }
       `}</style>
+
     </section>
   );
 }
