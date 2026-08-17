@@ -381,6 +381,10 @@ export default function Flavors() {
                 rounded-3xl
                 border
                 border-[#B08D57]/40
+              touch-pan-y
+              onTouchStart={handleFavoriteTouchStart}
+              onTouchMove={handleFavoriteTouchMove}
+              onTouchEnd={handleFavoriteTouchEnd}
                 bg-zinc-950
                 p-8
                 md:p-10
@@ -539,6 +543,10 @@ export default function Flavors() {
               rounded-3xl
               border
               border-[#B08D57]/30
+              touch-pan-y
+              onTouchStart={handleFlavorTouchStart}
+              onTouchMove={handleFlavorTouchMove}
+              onTouchEnd={handleFlavorTouchEnd}
               bg-zinc-950
               p-8
               md:p-10
@@ -688,6 +696,10 @@ export default function Flavors() {
     </section>
   );
 }
+
+
+
+
 
 
 
