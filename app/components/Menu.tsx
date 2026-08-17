@@ -1,5 +1,4 @@
-﻿
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import {
@@ -44,11 +43,11 @@ const menuItems = [
 
 export default function Menu() {
   const [current, setCurrent] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   const { t, language } = useLanguage();
 
   const item = menuItems[current];
-
   const itemText = t.menu.items[item.key];
 
   const nextSlide = () => {
@@ -65,6 +64,31 @@ export default function Menu() {
         ? menuItems.length - 1
         : prev - 1
     );
+  };
+
+  const handleTouchStart = (
+    e: React.TouchEvent<HTMLDivElement>
+  ) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (
+    e: React.TouchEvent<HTMLDivElement>
+  ) => {
+    if (touchStart === null) return;
+
+    const touchEnd = e.changedTouches[0].clientX;
+    const difference = touchStart - touchEnd;
+
+    if (Math.abs(difference) > 50) {
+      if (difference > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+
+    setTouchStart(null);
   };
 
   return (
@@ -94,7 +118,11 @@ export default function Menu() {
 
         {/* CARRUSEL */}
 
-        <div className="relative max-w-xl mx-auto">
+        <div
+          className="relative max-w-xl mx-auto"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
 
           {/* TARJETA */}
 
@@ -116,6 +144,8 @@ export default function Menu() {
               duration-300
               hover:-translate-y-1
               hover:border-[#B08D57]
+              select-none
+              touch-pan-y
               ${
                 item.id === "ofertas"
                   ? "border-2 border-[#B08D57]"
@@ -274,5 +304,3 @@ export default function Menu() {
     </section>
   );
 }
-
-
