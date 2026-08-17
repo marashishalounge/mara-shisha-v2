@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -7,27 +7,27 @@ import { supabase } from "../../lib/supabase";
 const premios = [
   {
     clave: "chupito",
-    emoji: "🥃",
+    emoji: "ðŸ¥ƒ",
     ganador: true,
   },
   {
     clave: "cuboEstrellaGalicia",
-    emoji: "🍺",
+    emoji: "ðŸº",
     ganador: true,
   },
   {
     clave: "copa",
-    emoji: "🍹",
+    emoji: "ðŸ¹",
     ganador: true,
   },
   {
     clave: "shishaClasica",
-    emoji: "💨",
+    emoji: "ðŸ’¨",
     ganador: true,
   },
   {
     clave: "sigueParticipando",
-    emoji: "✨",
+    emoji: "âœ¨",
     ganador: false,
   },
 ];
@@ -132,10 +132,13 @@ export default function Roulette() {
       }
 
       if (!data?.ok) {
-        setError(
-          data?.mensaje ||
-            "No puedes realizar otra tirada en este momento."
-        );
+        const mensaje =
+          data?.mensaje?.includes("ya ha utilizado su tirada")
+            ? t.roulette.dispositivoYaJugado
+            : data?.mensaje ||
+              "No puedes realizar otra tirada en este momento.";
+
+        setError(mensaje);
 
         setGirando(false);
         return;
@@ -149,7 +152,7 @@ export default function Roulette() {
 
       if (indiceGanador === -1) {
         throw new Error(
-          "Supabase devolvió un premio no reconocido."
+          "Supabase devolviÃ³ un premio no reconocido."
         );
       }
 
@@ -184,7 +187,7 @@ export default function Roulette() {
       console.error(error);
 
       setError(
-        "No hemos podido realizar la tirada. Inténtalo de nuevo."
+        "No hemos podido realizar la tirada. IntÃ©ntalo de nuevo."
       );
 
       setGirando(false);
@@ -220,7 +223,7 @@ export default function Roulette() {
               const duracion =
                 2.8 + (index % 12) * 0.14;
 
-              const tamaño =
+              const tamano =
                 5 + (index % 6);
 
               const rotacionInicial =
@@ -237,8 +240,8 @@ export default function Roulette() {
                   className="absolute top-[-30px] rounded-sm"
                   style={{
                     left: `${izquierda}%`,
-                    width: `${tamaño}px`,
-                    height: `${tamaño * 1.8}px`,
+                    width: `${tamano}px`,
+                    height: `${tamano * 1.8}px`,
                     backgroundColor: color,
                     boxShadow:
                       `0 0 6px ${color}`,
@@ -340,7 +343,7 @@ export default function Roulette() {
                       `mara-spark ${1 + (index % 4) * 0.3}s ease-in-out ${(index % 10) * 0.12}s infinite`,
                   }}
                 >
-                  ✦
+                  âœ¦
                 </span>
               );
             }
@@ -420,7 +423,7 @@ export default function Roulette() {
           </div>
 
           <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-[#B08D57] text-4xl font-bold z-20">
-            ▼
+            â–¼
           </div>
         </div>
 
@@ -433,6 +436,10 @@ export default function Roulette() {
             ? t.roulette.girando
             : t.roulette.boton}
         </button>
+
+        <p className="mt-4 text-xs text-gray-400 max-w-md mx-auto leading-relaxed">
+          {t.roulette.premiosConsumicion}
+        </p>
 
         {error && (
           <div className="mt-8 p-5 rounded-2xl border border-red-900 bg-[#111]">
@@ -452,7 +459,7 @@ export default function Roulette() {
           >
             <p className="text-[#B08D57] text-sm tracking-widest">
               {celebracion
-                ? `🎉 ${t.roulette.ganado} 🎉`
+                ? `ðŸŽ‰ ${t.roulette.ganado} ðŸŽ‰`
                 : t.roulette.premio}
             </p>
 
@@ -560,3 +567,5 @@ export default function Roulette() {
     </section>
   );
 }
+
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useLanguage } from "../i18n/LanguageContext";
 
@@ -31,8 +31,8 @@ export default function Offers() {
             style={{ color: "#B08D57" }}
           >
             {isEnglish
-              ? "✨ Special offers to share"
-              : "✨ Ofertas ideales para compartir"}
+              ? "âœ¨ Special offers to share"
+              : "âœ¨ Ofertas ideales para compartir"}
           </h2>
 
           <p
@@ -41,21 +41,21 @@ export default function Offers() {
           >
             {isEnglish
               ? "Special moments to enjoy together, with our best Mara combinations."
-              : "Momentos especiales para disfrutar acompañado, con nuestras mejores combinaciones Mara."}
+              : "Momentos especiales para disfrutar acompaÃ±ado, con nuestras mejores combinaciones Mara."}
           </p>
 
         </div>
 
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-4 -mx-2 px-2 md:mx-0 md:px-0 md:overflow-visible">
 
           {/* SHISHAS */}
 
           <div
-            className="rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8 text-center shadow-lg"
+            className="shrink-0 w-[85vw] md:w-auto snap-center rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8 text-center shadow-lg"
           >
 
             <div className="text-6xl mb-5">
-              🔥
+              ðŸ”¥
             </div>
 
             <h3
@@ -71,7 +71,7 @@ export default function Offers() {
               className="text-6xl font-bold mb-6"
               style={{ color: "#B08D57" }}
             >
-              2 x 15€
+              2 x 15â‚¬
             </div>
 
             <p
@@ -80,7 +80,7 @@ export default function Offers() {
             >
               {isEnglish
                 ? "Two classic shishas to enjoy your favourite flavours with whoever you want."
-                : "Dos shishas clásicas para disfrutar de tus sabores favoritos junto a quien quieras."}
+                : "Dos shishas clÃ¡sicas para disfrutar de tus sabores favoritos junto a quien quieras."}
             </p>
 
           </div>
@@ -88,11 +88,11 @@ export default function Offers() {
           {/* CERVEZAS */}
 
           <div
-            className="rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8"
+            className="shrink-0 w-[85vw] md:w-auto snap-center rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8"
           >
 
             <div className="text-6xl text-center mb-5">
-              🍺
+              ðŸº
             </div>
 
             <h3
@@ -114,14 +114,14 @@ export default function Offers() {
                   className="text-xl"
                   style={{ color: "#e6d8bb" }}
                 >
-                  🍺 {isEnglish ? "Heineken Beer Bucket" : "Cubo Heineken"}
+                  ðŸº {isEnglish ? "Heineken Beer Bucket" : "Cubo Heineken"}
                 </span>
 
                 <span
                   className="text-2xl font-bold"
                   style={{ color: "#B08D57" }}
                 >
-                  15€
+                  15â‚¬
                 </span>
 
               </div>
@@ -134,14 +134,14 @@ export default function Offers() {
                   className="text-xl"
                   style={{ color: "#e6d8bb" }}
                 >
-                  🍺 {isEnglish ? "Corona Beer Bucket" : "Cubo Corona"}
+                  ðŸº {isEnglish ? "Corona Beer Bucket" : "Cubo Corona"}
                 </span>
 
                 <span
                   className="text-2xl font-bold"
                   style={{ color: "#B08D57" }}
                 >
-                  15€
+                  15â‚¬
                 </span>
 
               </div>
@@ -154,7 +154,7 @@ export default function Offers() {
                   className="text-xl"
                   style={{ color: "#e6d8bb" }}
                 >
-                  🍺{" "}
+                  ðŸº{" "}
                   {isEnglish
                     ? "Estrella Galicia Beer Bucket (5 bottles)"
                     : "Cubo Estrella Galicia (5 quintos)"}
@@ -164,7 +164,7 @@ export default function Offers() {
                   className="text-2xl font-bold"
                   style={{ color: "#B08D57" }}
                 >
-                  8,50€
+                  8,50â‚¬
                 </span>
 
               </div>

@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 
 import { useLanguage } from "../i18n/LanguageContext";
@@ -38,35 +38,35 @@ export default function Shishas() {
 
         </div>
 
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-4 -mx-2 px-2 md:mx-0 md:px-0 md:overflow-visible">
 
           {/* SHISHA NORMAL */}
 
           <div
-            className="rounded-3xl border border-[#B08D57]/40 bg-zinc-950 p-8"
+            className="shrink-0 w-[85vw] md:w-auto snap-center rounded-3xl border border-[#B08D57]/40 bg-zinc-950 p-8"
           >
             <h3
               className="text-3xl font-bold text-center"
               style={{ color: "#B08D57" }}
             >
-              🔥 {t.shishas.normal}
+              ðŸ”¥ {t.shishas.normal}
             </h3>
 
             <div
               className="text-5xl font-bold text-center my-6"
               style={{ color: "#B08D57" }}
             >
-              10 €
+              10 â‚¬
             </div>
 
             <div
               className="space-y-3 text-center"
               style={{ color: "#e6d8bb" }}
             >
-              <p>✔ {t.shishas.normalPreparacion}</p>
-              <p>✔ {t.shishas.normalBase}</p>
-              <p>✔ {t.shishas.normalCarbon}</p>
-              <p>✔ {t.shishas.normalSabores}</p>
+              <p>âœ” {t.shishas.normalPreparacion}</p>
+              <p>âœ” {t.shishas.normalBase}</p>
+              <p>âœ” {t.shishas.normalCarbon}</p>
+              <p>âœ” {t.shishas.normalSabores}</p>
             </div>
 
             <div
@@ -80,32 +80,32 @@ export default function Shishas() {
           {/* SHISHA PREMIUM */}
 
           <div
-            className="rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8"
+            className="shrink-0 w-[85vw] md:w-auto snap-center rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8"
           >
             <h3
               className="text-3xl font-bold text-center"
               style={{ color: "#B08D57" }}
             >
-              👑 {t.shishas.premium}
+              ðŸ‘‘ {t.shishas.premium}
             </h3>
 
             <div
               className="text-5xl font-bold text-center my-6"
               style={{ color: "#B08D57" }}
             >
-              18 €
+              18 â‚¬
             </div>
 
             <div
               className="space-y-3 text-center"
               style={{ color: "#e6d8bb" }}
             >
-              <p>✔ {t.shishas.premiumBase}</p>
-              <p>✔ {t.shishas.premiumCarbon}</p>
-              <p>✔ {t.shishas.premiumTabaco}</p>
-              <p>✔ {t.shishas.premiumPreparacion}</p>
-              <p>✔ {t.shishas.premiumFrutal}</p>
-              <p>✔ {t.shishas.premiumMezclas}</p>
+              <p>âœ” {t.shishas.premiumBase}</p>
+              <p>âœ” {t.shishas.premiumCarbon}</p>
+              <p>âœ” {t.shishas.premiumTabaco}</p>
+              <p>âœ” {t.shishas.premiumPreparacion}</p>
+              <p>âœ” {t.shishas.premiumFrutal}</p>
+              <p>âœ” {t.shishas.premiumMezclas}</p>
             </div>
 
             <div

@@ -1,4 +1,4 @@
-export type Language = "es" | "en";
+﻿export type Language = "es" | "en";
 
 export const translations = {
   es: {
@@ -10,18 +10,18 @@ export const translations = {
       snacks: "Snacks",
       ofertas: "Ofertas",
       eventos: "Eventos",
-      galeria: "Galería",
+      galeria: "GalerÃ­a",
       nosotros: "Nosotros",
       contacto: "Contacto",
       ruleta: "Ruleta Mara",
     },
 
     common: {
-      verMenu: "Ver menú",
+      verMenu: "Ver menÃº",
       reservar: "Reservar",
       contactar: "Contactar",
-      descubrir: "Descubrir más",
-      leerMas: "Leer más",
+      descubrir: "Descubrir mÃ¡s",
+      leerMas: "Leer mÃ¡s",
       volver: "Volver",
       cerrar: "Cerrar",
     },
@@ -30,15 +30,15 @@ export const translations = {
       titulo: "Mara Shisha Lounge",
       subtitulo: "Tu lugar para desconectar",
       descripcion:
-        "Vive una experiencia única entre aromas, sabores y el mejor ambiente.",
-      botonMenu: "Ver menú",
+        "Vive una experiencia Ãºnica entre aromas, sabores y el mejor ambiente.",
+      botonMenu: "Ver menÃº",
       botonContacto: "Contactar",
     },
 
     menu: {
-      titulo: "Nuestro Menú",
+      titulo: "Nuestro MenÃº",
       subtitulo:
-        "Descubre nuestra selección de shishas, copas, cervezas, bebidas y ofertas especiales.",
+        "Descubre nuestra selecciÃ³n de shishas, copas, cervezas, bebidas y ofertas especiales.",
 
       shishas: "Shishas",
       bebidas: "Bebidas",
@@ -50,21 +50,21 @@ export const translations = {
         shishas: {
           title: "Shishas",
           description:
-            "Sabores clásicos, premium y especiales preparados al momento.",
+            "Sabores clÃ¡sicos, premium y especiales preparados al momento.",
           link: "Ver Shishas",
         },
 
         copas: {
           title: "Copas",
           description:
-            "Ginebras, rones y whiskys seleccionados para acompañar cada experiencia.",
+            "Ginebras, rones y whiskys seleccionados para acompaÃ±ar cada experiencia.",
           link: "Ver Copas",
         },
 
         bebidas: {
           title: "Bebidas",
           description:
-            "Refrescos, zumos, energéticas y bebidas calientes.",
+            "Refrescos, zumos, energÃ©ticas y bebidas calientes.",
           link: "Ver Bebidas",
         },
 
@@ -95,30 +95,30 @@ export const translations = {
       titulo: "SHISHAS",
 
       descripcion:
-        "Una experiencia creada para disfrutar aromas, sabores y momentos únicos.",
+        "Una experiencia creada para disfrutar aromas, sabores y momentos Ãºnicos.",
 
       normal: "Shisha Normal",
-      normalPreparacion: "Preparación clásica",
+      normalPreparacion: "PreparaciÃ³n clÃ¡sica",
       normalBase: "Base tradicional",
-      normalCarbon: "Carbón preparado al momento",
+      normalCarbon: "CarbÃ³n preparado al momento",
       normalSabores:
-        "Elige tus sabores favoritos en nuestra sección Sabores",
+        "Elige tus sabores favoritos en nuestra secciÃ³n Sabores",
 
       normalDescripcion:
         "Perfecta para quienes buscan una fumada equilibrada, suave y personalizada con sus sabores favoritos.",
 
       premium: "Shisha Premium",
       premiumBase: "Base helada",
-      premiumCarbon: "Carbón premium",
+      premiumCarbon: "CarbÃ³n premium",
       premiumTabaco: "Tabaco negro seleccionado",
-      premiumPreparacion: "Preparación exclusiva",
+      premiumPreparacion: "PreparaciÃ³n exclusiva",
       premiumFrutal: "Toque frutal premium",
       premiumMezclas: "Mezclas especiales de 2 o 3 sabores",
 
       experienciaPremium: "Experiencia Premium",
 
       premiumDescripcion:
-        "Una preparación exclusiva para amantes de sabores intensos, frescura extrema y combinaciones únicas.",
+        "Una preparaciÃ³n exclusiva para amantes de sabores intensos, frescura extrema y combinaciones Ãºnicas.",
 
       premiumFinal:
         "Una experiencia superior creada para quienes buscan una shisha elegante, intensa y memorable.",
@@ -133,24 +133,24 @@ export const translations = {
 
     drinks: {
       titulo: "COPAS",
-      subtitulo: "Nuestra selección de bebidas",
-      energia: "+1 € con bebida energética",
+      subtitulo: "Nuestra selecciÃ³n de bebidas",
+      energia: "+1 â‚¬ con bebida energÃ©tica",
 
       ginebras: "Ginebras",
       rones: "Rones",
       whisky: "Whisky",
 
-      categoriaAnterior: "Categoría anterior",
-      siguienteCategoria: "Siguiente categoría",
-      irCategoria: "Ir a categoría",
+      categoriaAnterior: "CategorÃ­a anterior",
+      siguienteCategoria: "Siguiente categorÃ­a",
+      irCategoria: "Ir a categorÃ­a",
     },
 
     beverages: {
       titulo: "BEBIDAS",
       subtitulo:
-        "Refrescos, bebidas frías y una selección de tés para acompañar tu experiencia.",
+        "Refrescos, bebidas frÃ­as y una selecciÃ³n de tÃ©s para acompaÃ±ar tu experiencia.",
 
-      frias: "Bebidas frías",
+      frias: "Bebidas frÃ­as",
 
       cola: "Colas",
       nestea: "Nestea",
@@ -158,13 +158,13 @@ export const translations = {
       zumos: "Zumos",
       aguaGas: "Agua con gas",
       agua: "Agua",
-      energeticas: "Bebidas energéticas",
+      energeticas: "Bebidas energÃ©ticas",
 
       calientes: "Bebidas calientes",
 
-      teVerde: "Té verde",
-      teMoruno: "Té moruno",
-      teLimon: "Té limón",
+      teVerde: "TÃ© verde",
+      teMoruno: "TÃ© moruno",
+      teLimon: "TÃ© limÃ³n",
       infusiones: "Infusiones",
 
       anterior: "Bebida anterior",
@@ -190,11 +190,11 @@ export const translations = {
     events: {
       titulo: "EVENTOS",
       subtitulo: "Vive Mara de una manera diferente",
-      proximamente: "Próximamente",
+      proximamente: "PrÃ³ximamente",
     },
 
     gallery: {
-      titulo: "GALERÍA",
+      titulo: "GALERÃA",
       subtitulo: "Descubre el ambiente de Mara",
     },
 
@@ -206,10 +206,10 @@ export const translations = {
 
     contact: {
       titulo: "CONTACTO",
-      subtitulo: "Estamos aquí para ti",
+      subtitulo: "Estamos aquÃ­ para ti",
       horario: "Horario",
-      ubicacion: "Ubicación",
-      telefono: "Teléfono",
+      ubicacion: "UbicaciÃ³n",
+      telefono: "TelÃ©fono",
       whatsapp: "WhatsApp",
     },
 
@@ -219,19 +219,21 @@ export const translations = {
       boton: "GIRAR RULETA",
       girando: "GIRANDO...",
       premio: "TU PREMIO",
-      enhorabuena: "¡ENHORABUENA!",
-      ganado: "¡HAS GANADO!",
+      enhorabuena: "Â¡ENHORABUENA!",
+      ganado: "Â¡HAS GANADO!",
       chupito: "CHUPITO",
       cuboEstrellaGalicia: "CUBO DE ESTRELLA GALICIA",
       copa: "COPA",
-      shishaClasica: "SHISHA CLÁSICA",
+      shishaClasica: "SHISHA CLÃSICA",
       sigueParticipando: "SIGUE PARTICIPANDO",
+      dispositivoYaJugado: "Este dispositivo ya ha utilizado su tirada hoy.",
+      premiosConsumicion: "Los premios de la ruleta están sujetos a consumición. Consulta las condiciones en Mara Shisha Lounge.",
     },
 
     footer: {
       derechos: "Todos los derechos reservados.",
-      privacidad: "Política de privacidad",
-      cookies: "Política de cookies",
+      privacidad: "PolÃ­tica de privacidad",
+      cookies: "PolÃ­tica de cookies",
       contacto: "Contacto",
     },
   },
@@ -369,7 +371,7 @@ export const translations = {
     drinks: {
       titulo: "DRINKS",
       subtitulo: "Our selection of drinks",
-      energia: "+€1 with energy drink",
+      energia: "+â‚¬1 with energy drink",
 
       ginebras: "Gins",
       rones: "Rums",
@@ -461,6 +463,8 @@ export const translations = {
       copa: "DRINK",
       shishaClasica: "CLASSIC SHISHA",
       sigueParticipando: "KEEP TRYING",
+      dispositivoYaJugado: "This device has already used its spin today.",
+      premiosConsumicion: "Roulette prizes are subject to purchase. Please check the conditions at Mara Shisha Lounge.",
     },
 
     footer: {
