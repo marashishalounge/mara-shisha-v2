@@ -47,6 +47,37 @@ export default function Drinks() {
 
   const [current, setCurrent] = useState(0);
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(null);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart === null || touchEnd === null) return;
+
+    const distance = touchStart - touchEnd;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   const nextSlide = () => {
     setCurrent((prev) =>
       prev === drinkCategories.length - 1 ? 0 : prev + 1
@@ -104,7 +135,12 @@ export default function Drinks() {
               p-8
               md:p-10
               min-h-[430px]
+              touch-pan-y
+              select-none
             "
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
 
             <h3
@@ -260,3 +296,4 @@ export default function Drinks() {
     </section>
   );
 }
+
