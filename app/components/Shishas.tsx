@@ -1,11 +1,20 @@
 ﻿"use client";
 
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Shishas() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? 1 : prev - 1));
+  };
 
   return (
     <section
@@ -39,175 +48,232 @@ export default function Shishas() {
 
         </div>
 
-        <div
-          onScroll={(e) => {
-            const container = e.currentTarget;
-            const index = Math.round(
-              container.scrollLeft / container.clientWidth
-            );
-            setCurrent(index);
-          }}
-          className="
-            flex
-            md:grid
-            md:grid-cols-2
-            gap-6
-            md:gap-10
-            overflow-x-auto
-            snap-x
-            snap-mandatory
-            pb-4
-            -mx-2
-            px-2
-            md:mx-0
-            md:px-0
-            md:overflow-visible
-            scrollbar-hide
-          "
-        >
+        <div className="relative max-w-xl mx-auto">
 
-          {/* SHISHA NORMAL */}
+          {/* CARRUSEL */}
 
-          <div
+          <div className="overflow-hidden">
+
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${current * 100}%)`,
+              }}
+            >
+
+              {/* SHISHA NORMAL */}
+
+              <div className="min-w-full px-1">
+
+                <div
+                  className="
+                    rounded-3xl
+                    border
+                    border-[#B08D57]/40
+                    bg-zinc-950
+                    p-8
+                  "
+                >
+
+                  <h3
+                    className="text-3xl font-bold text-center"
+                    style={{ color: "#B08D57" }}
+                  >
+                    🔥 {t.shishas.normal}
+                  </h3>
+
+                  <div
+                    className="text-5xl font-bold text-center my-6"
+                    style={{ color: "#B08D57" }}
+                  >
+                    10 €
+                  </div>
+
+                  <div
+                    className="space-y-3 text-center"
+                    style={{ color: "#e6d8bb" }}
+                  >
+                    <p>✔ {t.shishas.normalPreparacion}</p>
+                    <p>✔ {t.shishas.normalBase}</p>
+                    <p>✔ {t.shishas.normalCarbon}</p>
+                    <p>✔ {t.shishas.normalSabores}</p>
+                  </div>
+
+                  <div
+                    className="mt-10 border-t border-[#B08D57]/30 pt-6 text-center italic"
+                    style={{ color: "#c7b287" }}
+                  >
+                    {t.shishas.normalDescripcion}
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* SHISHA PREMIUM */}
+
+              <div className="min-w-full px-1">
+
+                <div
+                  className="
+                    rounded-3xl
+                    border-2
+                    border-[#B08D57]
+                    bg-zinc-950
+                    p-8
+                  "
+                >
+
+                  <h3
+                    className="text-3xl font-bold text-center"
+                    style={{ color: "#B08D57" }}
+                  >
+                    👑 {t.shishas.premium}
+                  </h3>
+
+                  <div
+                    className="text-5xl font-bold text-center my-6"
+                    style={{ color: "#B08D57" }}
+                  >
+                    18 €
+                  </div>
+
+                  <div
+                    className="space-y-3 text-center"
+                    style={{ color: "#e6d8bb" }}
+                  >
+                    <p>✔ {t.shishas.premiumBase}</p>
+                    <p>✔ {t.shishas.premiumCarbon}</p>
+                    <p>✔ {t.shishas.premiumTabaco}</p>
+                    <p>✔ {t.shishas.premiumPreparacion}</p>
+                    <p>✔ {t.shishas.premiumFrutal}</p>
+                    <p>✔ {t.shishas.premiumMezclas}</p>
+                  </div>
+
+                  <div
+                    className="mt-10 rounded-2xl border border-[#B08D57]/40 p-6 text-center"
+                  >
+
+                    <h4
+                      className="text-xl font-semibold mb-3"
+                      style={{ color: "#B08D57" }}
+                    >
+                      {t.shishas.experienciaPremium}
+                    </h4>
+
+                    <p
+                      className="leading-7"
+                      style={{ color: "#d8c59a" }}
+                    >
+                      {t.shishas.premiumDescripcion}
+                    </p>
+
+                  </div>
+
+                  <div
+                    className="mt-10 border-t border-[#B08D57]/30 pt-6 text-center italic"
+                    style={{ color: "#c7b287" }}
+                  >
+                    {t.shishas.premiumFinal}
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* FLECHA IZQUIERDA */}
+
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label={
+              language === "en"
+                ? "Previous"
+                : "Anterior"
+            }
             className="
-              shrink-0
-              w-[85vw]
-              md:w-auto
-              snap-center
-              rounded-3xl
+              absolute
+              left-[-18px]
+              md:left-[-60px]
+              top-1/2
+              -translate-y-1/2
+              w-12
+              h-12
+              rounded-full
               border
-              border-[#B08D57]/40
-              bg-zinc-950
-              p-8
+              border-[#B08D57]/60
+              bg-black
+              flex
+              items-center
+              justify-center
+              hover:bg-[#B08D57]
+              hover:text-black
+              transition
+              z-10
             "
+            style={{ color: "#B08D57" }}
           >
-            <h3
-              className="text-3xl font-bold text-center"
-              style={{ color: "#B08D57" }}
-            >
-              🔥 {t.shishas.normal}
-            </h3>
+            <ChevronLeft size={26} />
+          </button>
 
-            <div
-              className="text-5xl font-bold text-center my-6"
-              style={{ color: "#B08D57" }}
-            >
-              10 €
-            </div>
+          {/* FLECHA DERECHA */}
 
-            <div
-              className="space-y-3 text-center"
-              style={{ color: "#e6d8bb" }}
-            >
-              <p>✔ {t.shishas.normalPreparacion}</p>
-              <p>✔ {t.shishas.normalBase}</p>
-              <p>✔ {t.shishas.normalCarbon}</p>
-              <p>✔ {t.shishas.normalSabores}</p>
-            </div>
-
-            <div
-              className="mt-10 border-t border-[#B08D57]/30 pt-6 text-center italic"
-              style={{ color: "#c7b287" }}
-            >
-              {t.shishas.normalDescripcion}
-            </div>
-          </div>
-
-          {/* SHISHA PREMIUM */}
-
-          <div
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label={
+              language === "en"
+                ? "Next"
+                : "Siguiente"
+            }
             className="
-              shrink-0
-              w-[85vw]
-              md:w-auto
-              snap-center
-              rounded-3xl
-              border-2
-              border-[#B08D57]
-              bg-zinc-950
-              p-8
+              absolute
+              right-[-18px]
+              md:right-[-60px]
+              top-1/2
+              -translate-y-1/2
+              w-12
+              h-12
+              rounded-full
+              border
+              border-[#B08D57]/60
+              bg-black
+              flex
+              items-center
+              justify-center
+              hover:bg-[#B08D57]
+              hover:text-black
+              transition
+              z-10
             "
+            style={{ color: "#B08D57" }}
           >
-            <h3
-              className="text-3xl font-bold text-center"
-              style={{ color: "#B08D57" }}
-            >
-              👑 {t.shishas.premium}
-            </h3>
-
-            <div
-              className="text-5xl font-bold text-center my-6"
-              style={{ color: "#B08D57" }}
-            >
-              18 €
-            </div>
-
-            <div
-              className="space-y-3 text-center"
-              style={{ color: "#e6d8bb" }}
-            >
-              <p>✔ {t.shishas.premiumBase}</p>
-              <p>✔ {t.shishas.premiumCarbon}</p>
-              <p>✔ {t.shishas.premiumTabaco}</p>
-              <p>✔ {t.shishas.premiumPreparacion}</p>
-              <p>✔ {t.shishas.premiumFrutal}</p>
-              <p>✔ {t.shishas.premiumMezclas}</p>
-            </div>
-
-            <div
-              className="mt-10 rounded-2xl border border-[#B08D57]/40 p-6 text-center"
-            >
-              <h4
-                className="text-xl font-semibold mb-3"
-                style={{ color: "#B08D57" }}
-              >
-                {t.shishas.experienciaPremium}
-              </h4>
-
-              <p
-                className="leading-7"
-                style={{ color: "#d8c59a" }}
-              >
-                {t.shishas.premiumDescripcion}
-              </p>
-            </div>
-
-            <div
-              className="mt-10 border-t border-[#B08D57]/30 pt-6 text-center italic"
-              style={{ color: "#c7b287" }}
-            >
-              {t.shishas.premiumFinal}
-            </div>
-          </div>
+            <ChevronRight size={26} />
+          </button>
 
         </div>
 
-        {/* INDICADORES DE PÁGINA - SOLO MÓVIL */}
+        {/* INDICADORES */}
 
-        <div className="flex md:hidden justify-center items-center gap-2 mt-5">
+        <div className="flex justify-center items-center gap-2 mt-8">
 
           {[0, 1].map((index) => (
             <button
               key={index}
               type="button"
-              onClick={() => {
-                const container = document.querySelector(
-                  "#shishas .snap-x"
-                ) as HTMLElement | null;
-
-                if (container) {
-                  container.scrollTo({
-                    left: index * container.clientWidth,
-                    behavior: "smooth",
-                  });
-                }
-
-                setCurrent(index);
-              }}
-              aria-label={`Ver shisha ${index + 1}`}
+              onClick={() => setCurrent(index)}
+              aria-label={
+                language === "en"
+                  ? `Go to shisha ${index + 1}`
+                  : `Ir a shisha ${index + 1}`
+              }
               className="h-2 rounded-full transition-all duration-300"
               style={{
-                width: current === index ? "28px" : "8px",
+                width: current === index ? "32px" : "8px",
                 backgroundColor:
                   current === index ? "#B08D57" : "#5f5545",
               }}
@@ -216,13 +282,13 @@ export default function Shishas() {
 
         </div>
 
-        {/* TEXTO INDICADOR */}
+        {/* CONTADOR */}
 
         <p
-          className="md:hidden text-center text-xs mt-3"
+          className="text-center text-xs mt-4"
           style={{ color: "#8f856f" }}
         >
-          {current === 0 ? "Shisha Normal" : "Shisha Premium"}
+          {current + 1} / 2
         </p>
 
       </div>
