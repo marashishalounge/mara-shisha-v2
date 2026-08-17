@@ -1,10 +1,11 @@
-﻿
-"use client";
+﻿"use client";
 
+import { useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Shishas() {
   const { t } = useLanguage();
+  const [current, setCurrent] = useState(0);
 
   return (
     <section
@@ -38,12 +39,47 @@ export default function Shishas() {
 
         </div>
 
-        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-10 overflow-x-auto snap-x snap-mandatory pb-4 -mx-2 px-2 md:mx-0 md:px-0 md:overflow-visible">
+        <div
+          onScroll={(e) => {
+            const container = e.currentTarget;
+            const index = Math.round(
+              container.scrollLeft / container.clientWidth
+            );
+            setCurrent(index);
+          }}
+          className="
+            flex
+            md:grid
+            md:grid-cols-2
+            gap-6
+            md:gap-10
+            overflow-x-auto
+            snap-x
+            snap-mandatory
+            pb-4
+            -mx-2
+            px-2
+            md:mx-0
+            md:px-0
+            md:overflow-visible
+            scrollbar-hide
+          "
+        >
 
           {/* SHISHA NORMAL */}
 
           <div
-            className="shrink-0 w-[85vw] md:w-auto snap-center rounded-3xl border border-[#B08D57]/40 bg-zinc-950 p-8"
+            className="
+              shrink-0
+              w-[85vw]
+              md:w-auto
+              snap-center
+              rounded-3xl
+              border
+              border-[#B08D57]/40
+              bg-zinc-950
+              p-8
+            "
           >
             <h3
               className="text-3xl font-bold text-center"
@@ -80,7 +116,17 @@ export default function Shishas() {
           {/* SHISHA PREMIUM */}
 
           <div
-            className="shrink-0 w-[85vw] md:w-auto snap-center rounded-3xl border-2 border-[#B08D57] bg-zinc-950 p-8"
+            className="
+              shrink-0
+              w-[85vw]
+              md:w-auto
+              snap-center
+              rounded-3xl
+              border-2
+              border-[#B08D57]
+              bg-zinc-950
+              p-8
+            "
           >
             <h3
               className="text-3xl font-bold text-center"
@@ -135,8 +181,51 @@ export default function Shishas() {
           </div>
 
         </div>
+
+        {/* INDICADORES DE PÁGINA - SOLO MÓVIL */}
+
+        <div className="flex md:hidden justify-center items-center gap-2 mt-5">
+
+          {[0, 1].map((index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => {
+                const container = document.querySelector(
+                  "#shishas .snap-x"
+                ) as HTMLElement | null;
+
+                if (container) {
+                  container.scrollTo({
+                    left: index * container.clientWidth,
+                    behavior: "smooth",
+                  });
+                }
+
+                setCurrent(index);
+              }}
+              aria-label={`Ver shisha ${index + 1}`}
+              className="h-2 rounded-full transition-all duration-300"
+              style={{
+                width: current === index ? "28px" : "8px",
+                backgroundColor:
+                  current === index ? "#B08D57" : "#5f5545",
+              }}
+            />
+          ))}
+
+        </div>
+
+        {/* TEXTO INDICADOR */}
+
+        <p
+          className="md:hidden text-center text-xs mt-3"
+          style={{ color: "#8f856f" }}
+        >
+          {current === 0 ? "Shisha Normal" : "Shisha Premium"}
+        </p>
+
       </div>
     </section>
   );
 }
-
