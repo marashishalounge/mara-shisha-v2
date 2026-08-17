@@ -12,27 +12,27 @@ export default function Beverages() {
   const beverageCategories = [
     {
       id: "frias",
-      emoji: "ðŸ§Š",
+      emoji: "🧊",
       title: t.beverages.frias,
       items: [
-        [`ðŸ¥¤ ${t.beverages.cola}`, "2,50â‚¬"],
-        [`ðŸ§ƒ ${t.beverages.nestea}`, "2,50â‚¬"],
-        [`ðŸ§ƒ ${t.beverages.aquarius}`, "2,50â‚¬"],
-        [`ðŸ§ƒ ${t.beverages.zumos}`, "2,50â‚¬"],
-        [`ðŸ’¦ ${t.beverages.aguaGas}`, "2,50â‚¬"],
-        [`ðŸš° ${t.beverages.agua}`, "2,00â‚¬"],
-        [`âš¡ ${t.beverages.energeticas}`, "3,00â‚¬"],
+        [`🥤 ${t.beverages.cola}`, "2,50€"],
+        [`🧃 ${t.beverages.nestea}`, "2,50€"],
+        [`🧃 ${t.beverages.aquarius}`, "2,50€"],
+        [`🧃 ${t.beverages.zumos}`, "2,50€"],
+        [`💦 ${t.beverages.aguaGas}`, "2,50€"],
+        [`🚰 ${t.beverages.agua}`, "2,00€"],
+        [`? ${t.beverages.energeticas}`, "3,00€"],
       ],
     },
     {
       id: "calientes",
-      emoji: "â˜•",
+      emoji: "☕",
       title: t.beverages.calientes,
       items: [
-        [`ðŸµ ${t.beverages.teVerde}`, "2,00â‚¬"],
-        [`ðŸŒ¿ ${t.beverages.teMoruno}`, "2,00â‚¬"],
-        [`ðŸ‹ ${t.beverages.teLimon}`, "2,00â‚¬"],
-        [`ðŸŒ¸ ${t.beverages.infusiones}`, "2,00â‚¬"],
+        [`🫖 ${t.beverages.teVerde}`, "2,00€"],
+        [`🌿 ${t.beverages.teMoruno}`, "2,00€"],
+        [`🍋 ${t.beverages.teLimon}`, "2,00€"],
+        [`🌸 ${t.beverages.infusiones}`, "2,00€"],
       ],
     },
   ];
@@ -97,7 +97,7 @@ export default function Beverages() {
             className="text-5xl font-bold mb-4"
             style={{ color: "var(--bronze)" }}
           >
-            ðŸ¥¤ {t.beverages.titulo}
+            🥤 {t.beverages.titulo}
           </h2>
 
           <p className="text-zinc-400 text-lg">
@@ -299,6 +299,19 @@ export default function Beverages() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
