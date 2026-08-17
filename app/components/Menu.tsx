@@ -21,22 +21,22 @@ const menuItems = [
   },
   {
     id: "bebidas",
-    emoji: "🍟",
+    emoji: "🥤",
     key: "bebidas",
   },
   {
     id: "cervezas",
-    emoji: "🎉",
+    emoji: "🍺",
     key: "cervezas",
   },
   {
     id: "ofertas",
-    emoji: "?",
+    emoji: "🎁",
     key: "ofertas",
   },
   {
     id: "snacks",
-    emoji: "⭐",
+    emoji: "🍟",
     key: "snacks",
   },
 ] as const;
@@ -304,3 +304,5 @@ export default function Menu() {
     </section>
   );
 }
+
+
