@@ -247,6 +247,59 @@ export default function Flavors() {
   const [favoriteCurrent, setFavoriteCurrent] = useState(0);
   const [flavorCurrent, setFlavorCurrent] = useState(0);
 
+  const [favoriteTouchStart, setFavoriteTouchStart] = useState<number | null>(null);
+  const [favoriteTouchEnd, setFavoriteTouchEnd] = useState<number | null>(null);
+  const [flavorTouchStart, setFlavorTouchStart] = useState<number | null>(null);
+  const [flavorTouchEnd, setFlavorTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const handleFavoriteTouchStart = (e: React.TouchEvent) => {
+    setFavoriteTouchStart(e.targetTouches[0].clientX);
+    setFavoriteTouchEnd(null);
+  };
+
+  const handleFavoriteTouchMove = (e: React.TouchEvent) => {
+    setFavoriteTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleFavoriteTouchEnd = () => {
+    if (favoriteTouchStart === null || favoriteTouchEnd === null) return;
+
+    const distance = favoriteTouchStart - favoriteTouchEnd;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      nextFavorite();
+    } else {
+      previousFavorite();
+    }
+  };
+
+  const handleFlavorTouchStart = (e: React.TouchEvent) => {
+    setFlavorTouchStart(e.targetTouches[0].clientX);
+    setFlavorTouchEnd(null);
+  };
+
+  const handleFlavorTouchMove = (e: React.TouchEvent) => {
+    setFlavorTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleFlavorTouchEnd = () => {
+    if (flavorTouchStart === null || flavorTouchEnd === null) return;
+
+    const distance = flavorTouchStart - flavorTouchEnd;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      nextFlavor();
+    } else {
+      previousFlavor();
+    }
+  };
+
   const nextFavorite = () => {
     setFavoriteCurrent((prev) =>
       prev === favorites.length - 1 ? 0 : prev + 1
@@ -317,8 +370,8 @@ export default function Flavors() {
             style={{ color: "#B08D57" }}
           >
             {language === "es"
-              ? "🔥 Sabores más pedidos"
-              : "? Most popular flavours"}
+              ? "⭐ Sabores más pedidos"
+              : "⭐ Most popular flavours"}
           </h3>
 
           <div className="relative max-w-xl mx-auto">
@@ -338,13 +391,6 @@ export default function Flavors() {
                 text-center
               "
             >
-
-              <span
-                className="text-xs uppercase tracking-wider"
-                style={{ color: "#d8c59a" }}
-              >
-                {favorite.badge[language]}
-              </span>
 
               <h4
                 className="text-3xl font-bold mt-4 mb-5"
@@ -642,6 +688,12 @@ export default function Flavors() {
     </section>
   );
 }
+
+
+
+
+
+
 
 
 
