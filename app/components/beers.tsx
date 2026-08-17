@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -13,49 +13,49 @@ export default function Beers() {
     language === "en"
       ? [
           {
-            title: "🍺 Draft",
+            title: "ðŸº Draft",
             items: [
-              ["🍺 Amstel Pint", "€1.80"],
-              ["🍺 Amstel Jug", "€3.00"],
+              ["ðŸº Amstel Pint", "â‚¬1.80"],
+              ["ðŸº Amstel Jug", "â‚¬3.00"],
             ],
           },
           {
-            title: "🇪🇸 National",
+            title: "ðŸ‡ªðŸ‡¸ National",
             items: [
-              ["🍺 Estrella Galicia 1/5", "€1.90"],
-              ["🍺 Amstel 1/3", "€2.50"],
+              ["ðŸº Estrella Galicia 1/5", "â‚¬1.90"],
+              ["ðŸº Amstel 1/3", "â‚¬2.50"],
             ],
           },
           {
-            title: "🌍 International",
+            title: "ðŸŒ International",
             items: [
-              ["🍺 Heineken", "€3.00"],
-              ["🍺 Corona", "€3.00"],
-              ["🍺 Budweiser", "€3.00"],
+              ["ðŸº Heineken", "â‚¬3.00"],
+              ["ðŸº Corona", "â‚¬3.00"],
+              ["ðŸº Budweiser", "â‚¬3.00"],
             ],
           },
         ]
       : [
           {
-            title: "🍺 Barril",
+            title: "ðŸº Barril",
             items: [
-              ["🍺 Amstel Caña", "1,80€"],
-              ["🍺 Amstel Jarra", "3,00€"],
+              ["ðŸº Amstel CaÃ±a", "1,80â‚¬"],
+              ["ðŸº Amstel Jarra", "3,00â‚¬"],
             ],
           },
           {
-            title: "🇪🇸 Nacionales",
+            title: "ðŸ‡ªðŸ‡¸ Nacionales",
             items: [
-              ["🍺 Estrella Galicia 1/5", "1,90€"],
-              ["🍺 Amstel 1/3", "2,50€"],
+              ["ðŸº Estrella Galicia 1/5", "1,90â‚¬"],
+              ["ðŸº Amstel 1/3", "2,50â‚¬"],
             ],
           },
           {
-            title: "🌍 Internacionales",
+            title: "ðŸŒ Internacionales",
             items: [
-              ["🍺 Heineken", "3,00€"],
-              ["🍺 Corona", "3,00€"],
-              ["🍺 Budweiser", "3,00€"],
+              ["ðŸº Heineken", "3,00â‚¬"],
+              ["ðŸº Corona", "3,00â‚¬"],
+              ["ðŸº Budweiser", "3,00â‚¬"],
             ],
           },
         ];
@@ -72,6 +72,38 @@ export default function Beers() {
     );
   };
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(null);
+  };
+
+  
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart === null || touchEnd === null) return;
+
+    const distance = touchStart - touchEnd;
+
+    if (distance > minSwipeDistance) {
+      nextSlide();
+    }
+
+    if (distance < -minSwipeDistance) {
+      previousSlide();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
   const beer = beerCategories[current];
 
   return (
@@ -87,7 +119,7 @@ export default function Beers() {
           className="text-4xl font-bold text-center mb-4"
           style={{ color: "#B08D57" }}
         >
-          🍺 {language === "en" ? "Beers" : "Cervezas"}
+          ðŸº {language === "en" ? "Beers" : "Cervezas"}
         </h2>
 
         <p
@@ -96,7 +128,7 @@ export default function Beers() {
         >
           {language === "en"
             ? "Enjoy our selection of cold beers at Mara Shisha Lounge."
-            : "Una selección de cervezas frías para disfrutar en Mara Shisha Lounge."}
+            : "Una selecciÃ³n de cervezas frÃ­as para disfrutar en Mara Shisha Lounge."}
         </p>
 
         {/* CARRUSEL */}
@@ -114,10 +146,15 @@ export default function Beers() {
               p-8
               md:p-10
               min-h-[330px]
+              touch-pan-y
+              select-none
               flex
               flex-col
               justify-center
             "
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
           >
 
             <h3
@@ -172,7 +209,7 @@ export default function Beers() {
             aria-label={
               language === "en"
                 ? "Previous beer category"
-                : "Categoría de cerveza anterior"
+                : "CategorÃ­a de cerveza anterior"
             }
             className="
               absolute
@@ -209,7 +246,7 @@ export default function Beers() {
             aria-label={
               language === "en"
                 ? "Next beer category"
-                : "Siguiente categoría de cerveza"
+                : "Siguiente categorÃ­a de cerveza"
             }
             className="
               absolute
@@ -253,7 +290,7 @@ export default function Beers() {
               aria-label={
                 language === "en"
                   ? `Go to beer category ${index + 1}`
-                  : `Ir a categoría ${index + 1}`
+                  : `Ir a categorÃ­a ${index + 1}`
               }
               className="h-2 rounded-full transition-all duration-300"
               style={{
@@ -285,3 +322,9 @@ export default function Beers() {
     </section>
   );
 }
+
+
+
+
+
+
