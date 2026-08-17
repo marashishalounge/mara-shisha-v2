@@ -6,9 +6,9 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 const favorites = [
   {
-    name: "?? Love 66",
+    name: "🍓 Love 66",
     badge: {
-      es: "? M�s pedido",
+      es: "⭐ Más pedido",
       en: "? Most popular",
     },
     description: {
@@ -17,20 +17,20 @@ const favorites = [
     },
   },
   {
-    name: "?? Frutos Rojos",
+    name: "🍓 Frutos Rojos",
     badge: {
-      es: "? M�s pedido",
+      es: "⭐ Más pedido",
       en: "? Most popular",
     },
     description: {
-      es: "Una combinaci�n intensa de frutas rojas con un aroma elegante y equilibrado.",
+      es: "Una combinación intensa de frutas rojas con un aroma elegante y equilibrado.",
       en: "An intense combination of red berries with an elegant and balanced aroma.",
     },
   },
   {
-    name: "?? Mango",
+    name: "🥭 Mango",
     badge: {
-      es: "? M�s pedido",
+      es: "⭐ Más pedido",
       en: "? Most popular",
     },
     description: {
@@ -39,9 +39,9 @@ const favorites = [
     },
   },
   {
-    name: "?? Sand�a",
+    name: "🍉 Sandía",
     badge: {
-      es: "? M�s pedido",
+      es: "⭐ Más pedido",
       en: "? Most popular",
     },
     description: {
@@ -50,13 +50,13 @@ const favorites = [
     },
   },
   {
-    name: "?? Chicle",
+    name: "🍬 Chicle",
     badge: {
       es: "? Especial",
       en: "? Special",
     },
     description: {
-      es: "Un sabor divertido y diferente con un toque dulce y nost�lgico.",
+      es: "Un sabor divertido y diferente con un toque dulce y nostálgico.",
       en: "A fun and different flavour with a sweet and nostalgic touch.",
     },
   },
@@ -64,7 +64,7 @@ const favorites = [
 
 const flavors = [
   {
-    name: "?? Love 66",
+    name: "🍓 Love 66",
     badge: {
       es: "Tropical",
       en: "Tropical",
@@ -75,7 +75,7 @@ const flavors = [
     },
   },
   {
-    name: "?? Frutos Rojos",
+    name: "🍓 Frutos Rojos",
     badge: {
       es: "Frutal",
       en: "Fruity",
@@ -86,51 +86,51 @@ const flavors = [
     },
   },
   {
-    name: "?? Menta",
+    name: "🌿 Menta",
     badge: {
       es: "Fresco",
       en: "Fresh",
     },
     description: {
-      es: "Sensaci�n fr�a y limpia, perfecta para combinar.",
+      es: "Sensación fría y limpia, perfecta para combinar.",
       en: "A cool and clean sensation, perfect for mixing.",
     },
   },
   {
-    name: "?? Mango",
+    name: "🥭 Mango",
     badge: {
       es: "Tropical",
       en: "Tropical",
     },
     description: {
-      es: "Dulce y ex�tico con un sabor suave.",
+      es: "Dulce y exótico con un sabor suave.",
       en: "Sweet and exotic with a smooth flavour.",
     },
   },
   {
-    name: "?? Maracuy�",
+    name: "🥭 Maracuyá",
     badge: {
-      es: "Ex�tico",
+      es: "Exótico",
       en: "Exotic",
     },
     description: {
-      es: "Toque c�trico tropical con mucha personalidad.",
+      es: "Toque cítrico tropical con mucha personalidad.",
       en: "A tropical citrus touch with plenty of character.",
     },
   },
   {
-    name: "?? Menta Suave",
+    name: "🌿 Menta Suave",
     badge: {
       es: "Ligero",
       en: "Light",
     },
     description: {
-      es: "Refrescante pero m�s delicado que la menta cl�sica.",
+      es: "Refrescante pero más delicado que la menta clásica.",
       en: "Refreshing but more delicate than classic mint.",
     },
   },
   {
-    name: "?? Uva",
+    name: "🍇 Uva",
     badge: {
       es: "Intenso",
       en: "Intense",
@@ -141,18 +141,18 @@ const flavors = [
     },
   },
   {
-    name: "?? Ar�ndanos",
+    name: "🫐 Arándanos",
     badge: {
       es: "Premium",
       en: "Premium",
     },
     description: {
-      es: "Sabor suave, dulce y muy arom�tico.",
+      es: "Sabor suave, dulce y muy aromático.",
       en: "Smooth, sweet and highly aromatic flavour.",
     },
   },
   {
-    name: "?? Hierbabuena",
+    name: "🌿 Hierbabuena",
     badge: {
       es: "Natural",
       en: "Natural",
@@ -163,7 +163,7 @@ const flavors = [
     },
   },
   {
-    name: "?? Sand�a",
+    name: "🍉 Sandía",
     badge: {
       es: "Refrescante",
       en: "Refreshing",
@@ -174,31 +174,31 @@ const flavors = [
     },
   },
   {
-    name: "?? Mel�n",
+    name: "🍈 Melón",
     badge: {
       es: "Dulce",
       en: "Sweet",
     },
     description: {
-      es: "Suave y equilibrado para cualquier combinaci�n.",
+      es: "Suave y equilibrado para cualquier combinación.",
       en: "Smooth and balanced for any combination.",
     },
   },
   {
-    name: "?? Pi�a",
+    name: "🍍 Piña",
     badge: {
       es: "Caribe",
       en: "Caribbean",
     },
     description: {
-      es: "Tropical con un toque �cido muy agradable.",
+      es: "Tropical con un toque ácido muy agradable.",
       en: "Tropical with a pleasant tangy touch.",
     },
   },
   {
-    name: "?? Coco",
+    name: "🥥 Coco",
     badge: {
-      es: "Ex�tico",
+      es: "Exótico",
       en: "Exotic",
     },
     description: {
@@ -207,18 +207,18 @@ const flavors = [
     },
   },
   {
-    name: "?? Lima",
+    name: "🍋 Lima",
     badge: {
-      es: "C�trico",
+      es: "Cítrico",
       en: "Citrus",
     },
     description: {
-      es: "Fresca e intensa con un toque �cido.",
+      es: "Fresca e intensa con un toque ácido.",
       en: "Fresh and intense with a tangy touch.",
     },
   },
   {
-    name: "?? Chicle",
+    name: "🍬 Chicle",
     badge: {
       es: "Especial",
       en: "Special",
@@ -229,13 +229,13 @@ const flavors = [
     },
   },
   {
-    name: "?? Tarta de Queso",
+    name: "🍰 Tarta de Queso",
     badge: {
       es: "Exclusivo",
       en: "Exclusive",
     },
     description: {
-      es: "Una mezcla cremosa inspirada en un cl�sico de la reposter�a.",
+      es: "Una mezcla cremosa inspirada en un clásico de la repostería.",
       en: "A creamy blend inspired by a classic dessert.",
     },
   },
@@ -308,7 +308,7 @@ export default function Flavors() {
 
         </div>
 
-        {/* SABORES M�S PEDIDOS */}
+        {/* SABORES MÁS PEDIDOS */}
 
         <div className="mb-20">
 
@@ -317,7 +317,7 @@ export default function Flavors() {
             style={{ color: "#B08D57" }}
           >
             {language === "es"
-              ? "? Sabores m�s pedidos"
+              ? "🔥 Sabores más pedidos"
               : "? Most popular flavours"}
           </h3>
 
@@ -369,7 +369,7 @@ export default function Flavors() {
               onClick={previousFavorite}
               aria-label={
                 language === "es"
-                  ? "Sabor m�s pedido anterior"
+                  ? "Sabor más pedido anterior"
                   : "Previous popular flavour"
               }
               className="
@@ -404,7 +404,7 @@ export default function Flavors() {
               onClick={nextFavorite}
               aria-label={
                 language === "es"
-                  ? "Siguiente sabor m�s pedido"
+                  ? "Siguiente sabor más pedido"
                   : "Next popular flavour"
               }
               className="
@@ -446,7 +446,7 @@ export default function Flavors() {
                 onClick={() => setFavoriteCurrent(index)}
                 aria-label={
                   language === "es"
-                    ? `Ir al sabor m�s pedido ${index + 1}`
+                    ? `Ir al sabor más pedido ${index + 1}`
                     : `Go to popular flavour ${index + 1}`
                 }
                 className="h-2 rounded-full transition-all duration-300"
@@ -642,3 +642,6 @@ export default function Flavors() {
     </section>
   );
 }
+
+
+

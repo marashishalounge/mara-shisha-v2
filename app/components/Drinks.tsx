@@ -68,8 +68,6 @@ export default function Drinks() {
     >
       <div className="max-w-7xl mx-auto">
 
-        {/* TITULO */}
-
         <div className="text-center mb-16">
 
           <span
@@ -95,11 +93,7 @@ export default function Drinks() {
 
         </div>
 
-        {/* CARRUSEL */}
-
         <div className="relative max-w-xl mx-auto">
-
-          {/* TARJETA */}
 
           <div
             className="
@@ -136,9 +130,7 @@ export default function Drinks() {
                   "
                 >
 
-                  <span
-                    style={{ color: "#e6d8bb" }}
-                  >
+                  <span style={{ color: "#e6d8bb" }}>
                     {name}
                   </span>
 
@@ -156,8 +148,6 @@ export default function Drinks() {
             </div>
 
           </div>
-
-          {/* FLECHA IZQUIERDA */}
 
           <button
             type="button"
@@ -183,14 +173,10 @@ export default function Drinks() {
               transition
               z-10
             "
-            style={{
-              color: "#B08D57",
-            }}
+            style={{ color: "#B08D57" }}
           >
             <ChevronLeft size={26} />
           </button>
-
-          {/* FLECHA DERECHA */}
 
           <button
             type="button"
@@ -216,16 +202,12 @@ export default function Drinks() {
               transition
               z-10
             "
-            style={{
-              color: "#B08D57",
-            }}
+            style={{ color: "#B08D57" }}
           >
             <ChevronRight size={26} />
           </button>
 
         </div>
-
-        {/* INDICADORES */}
 
         <div className="flex justify-center gap-2 mt-8">
 
@@ -238,14 +220,9 @@ export default function Drinks() {
               aria-label={`${t.drinks.irCategoria} ${index + 1}`}
               className="h-2 rounded-full transition-all duration-300"
               style={{
-                width:
-                  current === index
-                    ? "32px"
-                    : "8px",
+                width: current === index ? "32px" : "8px",
                 backgroundColor:
-                  current === index
-                    ? "#B08D57"
-                    : "#5f5545",
+                  current === index ? "#B08D57" : "#5f5545",
               }}
             />
 
@@ -253,16 +230,12 @@ export default function Drinks() {
 
         </div>
 
-        {/* CONTADOR */}
-
         <p
           className="text-center text-xs mt-4"
           style={{ color: "#8f856f" }}
         >
           {current + 1} / {drinkCategories.length}
         </p>
-
-        {/* NOTA */}
 
         <div
           className="

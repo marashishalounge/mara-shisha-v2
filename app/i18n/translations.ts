@@ -227,7 +227,7 @@ export const translations = {
       shishaClasica: "SHISHA CLÁSICA",
       sigueParticipando: "SIGUE PARTICIPANDO",
       dispositivoYaJugado: "Este dispositivo ya ha utilizado su tirada hoy.",
-      premiosConsumicion: "Los premios de la ruleta est�n sujetos a consumici�n. Consulta las condiciones en Mara Shisha Lounge.",
+      premiosConsumicion: "Los premios de la ruleta están sujetos a consumición. Consulta las condiciones en Mara Shisha Lounge.",
     },
 
     footer: {
@@ -475,4 +475,5 @@ export const translations = {
     },
   },
 } as const;
+
 
