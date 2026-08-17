@@ -49,24 +49,24 @@ export default function Shishas() {
               className="text-3xl font-bold text-center"
               style={{ color: "#B08D57" }}
             >
-              ðŸ”¥ {t.shishas.normal}
+              🔥 {t.shishas.normal}
             </h3>
 
             <div
               className="text-5xl font-bold text-center my-6"
               style={{ color: "#B08D57" }}
             >
-              10 â‚¬
+              10 €
             </div>
 
             <div
               className="space-y-3 text-center"
               style={{ color: "#e6d8bb" }}
             >
-              <p>âœ” {t.shishas.normalPreparacion}</p>
-              <p>âœ” {t.shishas.normalBase}</p>
-              <p>âœ” {t.shishas.normalCarbon}</p>
-              <p>âœ” {t.shishas.normalSabores}</p>
+              <p>✔ {t.shishas.normalPreparacion}</p>
+              <p>✔ {t.shishas.normalBase}</p>
+              <p>✔ {t.shishas.normalCarbon}</p>
+              <p>✔ {t.shishas.normalSabores}</p>
             </div>
 
             <div
@@ -86,26 +86,26 @@ export default function Shishas() {
               className="text-3xl font-bold text-center"
               style={{ color: "#B08D57" }}
             >
-              ðŸ‘‘ {t.shishas.premium}
+              👑 {t.shishas.premium}
             </h3>
 
             <div
               className="text-5xl font-bold text-center my-6"
               style={{ color: "#B08D57" }}
             >
-              18 â‚¬
+              18 €
             </div>
 
             <div
               className="space-y-3 text-center"
               style={{ color: "#e6d8bb" }}
             >
-              <p>âœ” {t.shishas.premiumBase}</p>
-              <p>âœ” {t.shishas.premiumCarbon}</p>
-              <p>âœ” {t.shishas.premiumTabaco}</p>
-              <p>âœ” {t.shishas.premiumPreparacion}</p>
-              <p>âœ” {t.shishas.premiumFrutal}</p>
-              <p>âœ” {t.shishas.premiumMezclas}</p>
+              <p>✔ {t.shishas.premiumBase}</p>
+              <p>✔ {t.shishas.premiumCarbon}</p>
+              <p>✔ {t.shishas.premiumTabaco}</p>
+              <p>✔ {t.shishas.premiumPreparacion}</p>
+              <p>✔ {t.shishas.premiumFrutal}</p>
+              <p>✔ {t.shishas.premiumMezclas}</p>
             </div>
 
             <div
@@ -139,3 +139,4 @@ export default function Shishas() {
     </section>
   );
 }
+

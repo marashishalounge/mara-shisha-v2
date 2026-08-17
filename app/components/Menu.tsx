@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 
 import { useState } from "react";
@@ -12,32 +12,32 @@ import { useLanguage } from "../i18n/LanguageContext";
 const menuItems = [
   {
     id: "shishas",
-    emoji: "🔥",
+    emoji: "??",
     key: "shishas",
   },
   {
     id: "copas",
-    emoji: "🍸",
+    emoji: "??",
     key: "copas",
   },
   {
     id: "bebidas",
-    emoji: "🥤",
+    emoji: "??",
     key: "bebidas",
   },
   {
     id: "cervezas",
-    emoji: "🍺",
+    emoji: "??",
     key: "cervezas",
   },
   {
     id: "ofertas",
-    emoji: "✨",
+    emoji: "?",
     key: "ofertas",
   },
   {
     id: "snacks",
-    emoji: "🍟",
+    emoji: "??",
     key: "snacks",
   },
 ] as const;
@@ -274,3 +274,4 @@ export default function Menu() {
     </section>
   );
 }
+

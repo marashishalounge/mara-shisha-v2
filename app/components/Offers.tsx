@@ -31,8 +31,8 @@ export default function Offers() {
             style={{ color: "#B08D57" }}
           >
             {isEnglish
-              ? "âœ¨ Special offers to share"
-              : "âœ¨ Ofertas ideales para compartir"}
+              ? "✨ Special offers to share"
+              : "✨ Ofertas ideales para compartir"}
           </h2>
 
           <p
@@ -41,7 +41,7 @@ export default function Offers() {
           >
             {isEnglish
               ? "Special moments to enjoy together, with our best Mara combinations."
-              : "Momentos especiales para disfrutar acompaÃ±ado, con nuestras mejores combinaciones Mara."}
+              : "Momentos especiales para disfrutar acompañado, con nuestras mejores combinaciones Mara."}
           </p>
 
         </div>
@@ -55,7 +55,7 @@ export default function Offers() {
           >
 
             <div className="text-6xl mb-5">
-              ðŸ”¥
+              🔥
             </div>
 
             <h3
@@ -71,7 +71,7 @@ export default function Offers() {
               className="text-6xl font-bold mb-6"
               style={{ color: "#B08D57" }}
             >
-              2 x 15â‚¬
+              2 x 15€
             </div>
 
             <p
@@ -80,7 +80,7 @@ export default function Offers() {
             >
               {isEnglish
                 ? "Two classic shishas to enjoy your favourite flavours with whoever you want."
-                : "Dos shishas clÃ¡sicas para disfrutar de tus sabores favoritos junto a quien quieras."}
+                : "Dos shishas clásicas para disfrutar de tus sabores favoritos junto a quien quieras."}
             </p>
 
           </div>
@@ -92,7 +92,7 @@ export default function Offers() {
           >
 
             <div className="text-6xl text-center mb-5">
-              ðŸº
+              🍺
             </div>
 
             <h3
@@ -114,14 +114,14 @@ export default function Offers() {
                   className="text-xl"
                   style={{ color: "#e6d8bb" }}
                 >
-                  ðŸº {isEnglish ? "Heineken Beer Bucket" : "Cubo Heineken"}
+                  🍺 {isEnglish ? "Heineken Beer Bucket" : "Cubo Heineken"}
                 </span>
 
                 <span
                   className="text-2xl font-bold"
                   style={{ color: "#B08D57" }}
                 >
-                  15â‚¬
+                  15€
                 </span>
 
               </div>
@@ -134,14 +134,14 @@ export default function Offers() {
                   className="text-xl"
                   style={{ color: "#e6d8bb" }}
                 >
-                  ðŸº {isEnglish ? "Corona Beer Bucket" : "Cubo Corona"}
+                  🍺 {isEnglish ? "Corona Beer Bucket" : "Cubo Corona"}
                 </span>
 
                 <span
                   className="text-2xl font-bold"
                   style={{ color: "#B08D57" }}
                 >
-                  15â‚¬
+                  15€
                 </span>
 
               </div>
@@ -154,7 +154,7 @@ export default function Offers() {
                   className="text-xl"
                   style={{ color: "#e6d8bb" }}
                 >
-                  ðŸº{" "}
+                  🍺{" "}
                   {isEnglish
                     ? "Estrella Galicia Beer Bucket (5 bottles)"
                     : "Cubo Estrella Galicia (5 quintos)"}
@@ -164,7 +164,7 @@ export default function Offers() {
                   className="text-2xl font-bold"
                   style={{ color: "#B08D57" }}
                 >
-                  8,50â‚¬
+                  8,50€
                 </span>
 
               </div>
@@ -193,3 +193,4 @@ export default function Offers() {
     </section>
   );
 }
+
