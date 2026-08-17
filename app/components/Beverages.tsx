@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -12,27 +12,27 @@ export default function Beverages() {
   const beverageCategories = [
     {
       id: "frias",
-      emoji: "🧊",
+      emoji: "ðŸ§Š",
       title: t.beverages.frias,
       items: [
-        [`🥤 ${t.beverages.cola}`, "2,50€"],
-        [`🧃 ${t.beverages.nestea}`, "2,50€"],
-        [`🧃 ${t.beverages.aquarius}`, "2,50€"],
-        [`🧃 ${t.beverages.zumos}`, "2,50€"],
-        [`💦 ${t.beverages.aguaGas}`, "2,50€"],
-        [`🚰 ${t.beverages.agua}`, "2,00€"],
-        [`⚡ ${t.beverages.energeticas}`, "3,00€"],
+        [`ðŸ¥¤ ${t.beverages.cola}`, "2,50â‚¬"],
+        [`ðŸ§ƒ ${t.beverages.nestea}`, "2,50â‚¬"],
+        [`ðŸ§ƒ ${t.beverages.aquarius}`, "2,50â‚¬"],
+        [`ðŸ§ƒ ${t.beverages.zumos}`, "2,50â‚¬"],
+        [`ðŸ’¦ ${t.beverages.aguaGas}`, "2,50â‚¬"],
+        [`ðŸš° ${t.beverages.agua}`, "2,00â‚¬"],
+        [`âš¡ ${t.beverages.energeticas}`, "3,00â‚¬"],
       ],
     },
     {
       id: "calientes",
-      emoji: "☕",
+      emoji: "â˜•",
       title: t.beverages.calientes,
       items: [
-        [`🍵 ${t.beverages.teVerde}`, "2,00€"],
-        [`🌿 ${t.beverages.teMoruno}`, "2,00€"],
-        [`🍋 ${t.beverages.teLimon}`, "2,00€"],
-        [`🌸 ${t.beverages.infusiones}`, "2,00€"],
+        [`ðŸµ ${t.beverages.teVerde}`, "2,00â‚¬"],
+        [`ðŸŒ¿ ${t.beverages.teMoruno}`, "2,00â‚¬"],
+        [`ðŸ‹ ${t.beverages.teLimon}`, "2,00â‚¬"],
+        [`ðŸŒ¸ ${t.beverages.infusiones}`, "2,00â‚¬"],
       ],
     },
   ];
@@ -47,6 +47,37 @@ export default function Beverages() {
     setCurrent((prev) =>
       prev === 0 ? beverageCategories.length - 1 : prev - 1
     );
+  };
+
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(null);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart === null || touchEnd === null) return;
+
+    const distance = touchStart - touchEnd;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      nextSlide();
+    } else {
+      previousSlide();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   const beverage = beverageCategories[current];
@@ -66,7 +97,7 @@ export default function Beverages() {
             className="text-5xl font-bold mb-4"
             style={{ color: "var(--bronze)" }}
           >
-            🥤 {t.beverages.titulo}
+            ðŸ¥¤ {t.beverages.titulo}
           </h2>
 
           <p className="text-zinc-400 text-lg">
@@ -97,10 +128,13 @@ export default function Beverages() {
               flex
               flex-col
               justify-center
+              touch-pan-y
+              select-none
             "
-          >
-
-            {/* CABECERA */}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >{/* CABECERA */}
 
             <div className="text-center mb-8">
 
@@ -265,3 +299,6 @@ export default function Beverages() {
     </section>
   );
 }
+
+
+
