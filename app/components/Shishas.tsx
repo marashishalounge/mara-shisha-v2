@@ -1,12 +1,13 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Shishas() {
   const { t, language } = useLanguage();
   const [current, setCurrent] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   const nextSlide = () => {
     setCurrent((prev) => (prev === 1 ? 0 : prev + 1));
@@ -14,6 +15,27 @@ export default function Shishas() {
 
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? 1 : prev - 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    const touchEndX = e.changedTouches[0].clientX;
+    const difference = touchStartX.current - touchEndX;
+
+    if (Math.abs(difference) > 50) {
+      if (difference > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+
+    touchStartX.current = null;
   };
 
   return (
@@ -50,9 +72,11 @@ export default function Shishas() {
 
         <div className="relative max-w-xl mx-auto">
 
-          {/* CARRUSEL */}
-
-          <div className="overflow-hidden">
+          <div
+            className="overflow-hidden touch-pan-y"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
 
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -257,7 +281,7 @@ export default function Shishas() {
 
         </div>
 
-        {/* INDICADORES */}
+        {/* PUNTOS */}
 
         <div className="flex justify-center items-center gap-2 mt-8">
 
