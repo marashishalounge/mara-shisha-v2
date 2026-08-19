@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -15,23 +15,23 @@ export default function Beers() {
           {
             title: "ðŸº Draft",
             items: [
-              ["ðŸº Amstel Pint", "â‚¬1.80"],
-              ["ðŸº Amstel Jug", "â‚¬3.00"],
+              ["ðŸº Amstel Pint", "€1.80"],
+              ["ðŸº Amstel Jug", "€3.00"],
             ],
           },
           {
-            title: "ðŸ‡ªðŸ‡¸ National",
+            title: "🍺 National",
             items: [
-              ["ðŸº Estrella Galicia 1/5", "â‚¬1.90"],
-              ["ðŸº Amstel 1/3", "â‚¬2.50"],
+              ["ðŸº Estrella Galicia 1/5", "€1.90"],
+              ["ðŸº Amstel 1/3", "€2.50"],
             ],
           },
           {
-            title: "ðŸŒ International",
+            title: "??€ International",
             items: [
-              ["ðŸº Heineken", "â‚¬3.00"],
-              ["ðŸº Corona", "â‚¬3.00"],
-              ["ðŸº Budweiser", "â‚¬3.00"],
+              ["ðŸº Heineken", "€3.00"],
+              ["ðŸº Corona", "€3.00"],
+              ["ðŸº Budweiser", "€3.00"],
             ],
           },
         ]
@@ -39,23 +39,23 @@ export default function Beers() {
           {
             title: "ðŸº Barril",
             items: [
-              ["ðŸº Amstel CaÃ±a", "1,80â‚¬"],
-              ["ðŸº Amstel Jarra", "3,00â‚¬"],
+              ["ðŸº Amstel Ca€a", "1,80€"],
+              ["ðŸº Amstel Jarra", "3,00€"],
             ],
           },
           {
-            title: "ðŸ‡ªðŸ‡¸ Nacionales",
+            title: "🍺 Nacionales",
             items: [
-              ["ðŸº Estrella Galicia 1/5", "1,90â‚¬"],
-              ["ðŸº Amstel 1/3", "2,50â‚¬"],
+              ["ðŸº Estrella Galicia 1/5", "1,90€"],
+              ["ðŸº Amstel 1/3", "2,50€"],
             ],
           },
           {
-            title: "ðŸŒ Internacionales",
+            title: "??€ Internacionales",
             items: [
-              ["ðŸº Heineken", "3,00â‚¬"],
-              ["ðŸº Corona", "3,00â‚¬"],
-              ["ðŸº Budweiser", "3,00â‚¬"],
+              ["ðŸº Heineken", "3,00€"],
+              ["ðŸº Corona", "3,00€"],
+              ["ðŸº Budweiser", "3,00€"],
             ],
           },
         ];
@@ -128,7 +128,7 @@ export default function Beers() {
         >
           {language === "en"
             ? "Enjoy our selection of cold beers at Mara Shisha Lounge."
-            : "Una selecciÃ³n de cervezas frÃ­as para disfrutar en Mara Shisha Lounge."}
+            : "Una selecci€n de cervezas fr€as para disfrutar en Mara Shisha Lounge."}
         </p>
 
         {/* CARRUSEL */}
@@ -209,7 +209,7 @@ export default function Beers() {
             aria-label={
               language === "en"
                 ? "Previous beer category"
-                : "CategorÃ­a de cerveza anterior"
+                : "Categor€a de cerveza anterior"
             }
             className="
               absolute
@@ -246,7 +246,7 @@ export default function Beers() {
             aria-label={
               language === "en"
                 ? "Next beer category"
-                : "Siguiente categorÃ­a de cerveza"
+                : "Siguiente categor€a de cerveza"
             }
             className="
               absolute
@@ -290,7 +290,7 @@ export default function Beers() {
               aria-label={
                 language === "en"
                   ? `Go to beer category ${index + 1}`
-                  : `Ir a categorÃ­a ${index + 1}`
+                  : `Ir a categor€a ${index + 1}`
               }
               className="h-2 rounded-full transition-all duration-300"
               style={{
@@ -322,6 +322,11 @@ export default function Beers() {
     </section>
   );
 }
+
+
+
+
+
 
 
 
