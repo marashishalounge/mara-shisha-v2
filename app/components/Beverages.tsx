@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -12,27 +12,27 @@ export default function Beverages() {
   const beverageCategories = [
     {
       id: "frias",
-      emoji: "🧊",
+      emoji: "??",
       title: t.beverages.frias,
       items: [
-        [`🥤 ${t.beverages.cola}`, "2,50€"],
-        [`🧃 ${t.beverages.nestea}`, "2,50€"],
-        [`🧃 ${t.beverages.aquarius}`, "2,50€"],
-        [`🧃 ${t.beverages.zumos}`, "2,50€"],
-        [`💦 ${t.beverages.aguaGas}`, "2,50€"],
-        [`🚰 ${t.beverages.agua}`, "2,00€"],
-        [`? ${t.beverages.energeticas}`, "3,00€"],
+        [`?? ${t.beverages.cola}`, "2,50�"],
+        [`?? ${t.beverages.nestea}`, "2,50�"],
+        [`?? ${t.beverages.aquarius}`, "2,50�"],
+        [`?? ${t.beverages.zumos}`, "2,50�"],
+        [`?? ${t.beverages.aguaGas}`, "2,50�"],
+        [`?? ${t.beverages.agua}`, "2,00�"],
+        [`? ${t.beverages.energeticas}`, "3,00�"],
       ],
     },
     {
       id: "calientes",
-      emoji: "☕",
+      emoji: "?",
       title: t.beverages.calientes,
       items: [
-        [`🫖 ${t.beverages.teVerde}`, "2,00€"],
-        [`🌿 ${t.beverages.teMoruno}`, "2,00€"],
-        [`🍋 ${t.beverages.teLimon}`, "2,00€"],
-        [`🌸 ${t.beverages.infusiones}`, "2,00€"],
+        [`?? ${t.beverages.teVerde}`, "2,00�"],
+        [`?? ${t.beverages.teMoruno}`, "2,00�"],
+        [`?? ${t.beverages.teLimon}`, "2,00�"],
+        [`?? ${t.beverages.infusiones}`, "2,00�"],
       ],
     },
   ];
@@ -97,7 +97,7 @@ export default function Beverages() {
             className="text-5xl font-bold mb-4"
             style={{ color: "var(--bronze)" }}
           >
-            🥤 {t.beverages.titulo}
+            ?? {t.beverages.titulo}
           </h2>
 
           <p className="text-zinc-400 text-lg">

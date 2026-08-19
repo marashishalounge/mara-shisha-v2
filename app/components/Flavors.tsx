@@ -6,7 +6,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 const favorites = [
   {
-    name: "💨 Love 66",
+    name: "🍓 Love 66",
     badge: {
       es: "⭐ Más pedido",
       en: "⭐ Most popular",
@@ -50,7 +50,7 @@ const favorites = [
     },
   },
   {
-    name: "🍬 Chicle",
+    name: "🫧 Chicle",
     badge: {
       es: "⭐ Especial",
       en: "⭐ Special",
@@ -152,17 +152,6 @@ const flavors = [
     },
   },
   {
-    name: "🌿 Hierbabuena",
-    badge: {
-      es: "Natural",
-      en: "Natural",
-    },
-    description: {
-      es: "Frescor herbal con un toque diferente.",
-      en: "Herbal freshness with a distinctive touch.",
-    },
-  },
-  {
     name: "🍉 Sandía",
     badge: {
       es: "Refrescante",
@@ -185,28 +174,6 @@ const flavors = [
     },
   },
   {
-    name: "🍍 Piña",
-    badge: {
-      es: "Caribe",
-      en: "Caribbean",
-    },
-    description: {
-      es: "Tropical con un toque ácido muy agradable.",
-      en: "Tropical with a pleasant tangy touch.",
-    },
-  },
-  {
-    name: "🥥 Coco",
-    badge: {
-      es: "Exótico",
-      en: "Exotic",
-    },
-    description: {
-      es: "Cremoso y diferente para mezclas especiales.",
-      en: "Creamy and distinctive for special mixes.",
-    },
-  },
-  {
     name: "🍋 Lima",
     badge: {
       es: "Cítrico",
@@ -218,7 +185,7 @@ const flavors = [
     },
   },
   {
-    name: "🍬 Chicle",
+    name: "🫧 Chicle",
     badge: {
       es: "Especial",
       en: "Special",
@@ -239,6 +206,17 @@ const flavors = [
       en: "A creamy blend inspired by a classic dessert.",
     },
   },
+  {
+    name: "🍏 Doble Manzana",
+    badge: {
+      es: "Clásico",
+      en: "Classic",
+    },
+    description: {
+      es: "La combinación clásica de manzana verde y roja, con un sabor dulce, fresco y equilibrado.",
+      en: "The classic combination of green and red apple, with a sweet, fresh and balanced flavour.",
+    },
+  },
 ];
 
 export default function Flavors() {
@@ -247,9 +225,15 @@ export default function Flavors() {
   const [favoriteCurrent, setFavoriteCurrent] = useState(0);
   const [flavorCurrent, setFlavorCurrent] = useState(0);
 
-  const [favoriteTouchStart, setFavoriteTouchStart] = useState<number | null>(null);
-  const [favoriteTouchEnd, setFavoriteTouchEnd] = useState<number | null>(null);
-  const [flavorTouchStart, setFlavorTouchStart] = useState<number | null>(null);
+  const [favoriteTouchStart, setFavoriteTouchStart] = useState<number | null>(
+    null
+  );
+  const [favoriteTouchEnd, setFavoriteTouchEnd] = useState<number | null>(
+    null
+  );
+  const [flavorTouchStart, setFlavorTouchStart] = useState<number | null>(
+    null
+  );
   const [flavorTouchEnd, setFlavorTouchEnd] = useState<number | null>(null);
 
   const minSwipeDistance = 50;
@@ -334,10 +318,7 @@ export default function Flavors() {
   const flavor = flavors[flavorCurrent];
 
   return (
-    <section
-      id="sabores"
-      className="bg-black py-24 px-6"
-    >
+    <section id="sabores" className="bg-black py-24 px-6">
       <div className="max-w-7xl mx-auto">
 
         {/* CABECERA */}
