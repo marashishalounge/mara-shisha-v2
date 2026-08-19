@@ -1,4 +1,5 @@
-﻿"use client";
+﻿
+"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -11,36 +12,36 @@ export default function Drinks() {
     {
       title: t.drinks.ginebras,
       items: [
-        ["Bombay Sapphire", "6�"],
-        ["Beefeater", "6�"],
-        ["Puerto de Indias", "6�"],
-        ["Larios", "6�"],
-        ["Seagrams", "8�"],
-        ["Seagrams 0'0", "8�"],
+        ["Bombay Sapphire", "6 €"],
+        ["Beefeater", "6 €"],
+        ["Puerto de Indias", "6 €"],
+        ["Larios", "6 €"],
+        ["Seagrams", "8 €"],
+        ["Seagrams 0'0", "8 €"],
       ],
     },
     {
       title: t.drinks.rones,
       items: [
-        ["Barcel�", "6�"],
-        ["Brugal", "6�"],
-        ["Legendario", "6�"],
-        ["Bacard�", "6�"],
-        ["Cacique", "6�"],
-        ["Negrita", "6�"],
+        ["Barceló", "6 €"],
+        ["Brugal", "6 €"],
+        ["Legendario", "6 €"],
+        ["Bacardí", "6 €"],
+        ["Cacique", "6 €"],
+        ["Negrita", "6 €"],
       ],
     },
     {
       title: t.drinks.whisky,
       items: [
-        ["Red Label", "6�"],
-        ["Dewar's White Label", "6�"],
-        ["Ballantines", "6�"],
-        ["DYC", "6�"],
-        ["J�germeister", "7�"],
-        ["Jack Daniel's", "8�"],
-        ["Black Label", "8�"],
-        ["Chivas Regal", "8�"],
+        ["Red Label", "6 €"],
+        ["Dewar's White Label", "6 €"],
+        ["Ballantine's", "6 €"],
+        ["DYC", "6 €"],
+        ["Jägermeister", "7 €"],
+        ["Jack Daniel's", "8 €"],
+        ["Black Label", "8 €"],
+        ["Chivas Regal", "8 €"],
       ],
     },
   ];
@@ -51,6 +52,18 @@ export default function Drinks() {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const minSwipeDistance = 50;
+
+  const nextSlide = () => {
+    setCurrent((prev) =>
+      prev === drinkCategories.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const previousSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? drinkCategories.length - 1 : prev - 1
+    );
+  };
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -78,18 +91,6 @@ export default function Drinks() {
     setTouchEnd(null);
   };
 
-  const nextSlide = () => {
-    setCurrent((prev) =>
-      prev === drinkCategories.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const previousSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? drinkCategories.length - 1 : prev - 1
-    );
-  };
-
   const drink = drinkCategories[current];
 
   return (
@@ -109,11 +110,11 @@ export default function Drinks() {
           </span>
 
           <h2
-  className="text-5xl font-bold mt-4 mb-6"
-  style={{ color: "#B08D57" }}
->
-  🍹 {t.drinks.titulo}
-</h2>
+            className="text-5xl font-bold mt-4 mb-6"
+            style={{ color: "#B08D57" }}
+          >
+            🍹 {t.drinks.titulo}
+          </h2>
 
           <p
             className="max-w-3xl mx-auto leading-8"
