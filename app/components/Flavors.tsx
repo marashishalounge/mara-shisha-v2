@@ -6,7 +6,10 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 const favorites = [
   {
-    name: "🍓 Love 66",
+    name: {
+      es: "🍓 Love 66",
+      en: "🍓 Love 66",
+    },
     badge: {
       es: "⭐ Más pedido",
       en: "⭐ Most popular",
@@ -17,7 +20,10 @@ const favorites = [
     },
   },
   {
-    name: "🍓 Frutos Rojos",
+    name: {
+      es: "🍓 Frutos Rojos",
+      en: "🍓 Red Berries",
+    },
     badge: {
       es: "⭐ Más pedido",
       en: "⭐ Most popular",
@@ -28,7 +34,10 @@ const favorites = [
     },
   },
   {
-    name: "🥭 Mango",
+    name: {
+      es: "🥭 Mango",
+      en: "🥭 Mango",
+    },
     badge: {
       es: "⭐ Más pedido",
       en: "⭐ Most popular",
@@ -39,7 +48,10 @@ const favorites = [
     },
   },
   {
-    name: "🍉 Sandía",
+    name: {
+      es: "🍉 Sandía",
+      en: "🍉 Watermelon",
+    },
     badge: {
       es: "⭐ Más pedido",
       en: "⭐ Most popular",
@@ -50,7 +62,10 @@ const favorites = [
     },
   },
   {
-    name: "🫧 Chicle",
+    name: {
+      es: "🫧 Chicle",
+      en: "🫧 Bubblegum",
+    },
     badge: {
       es: "⭐ Especial",
       en: "⭐ Special",
@@ -64,7 +79,10 @@ const favorites = [
 
 const flavors = [
   {
-    name: "🍓 Love 66",
+    name: {
+      es: "🍓 Love 66",
+      en: "🍓 Love 66",
+    },
     badge: {
       es: "Tropical",
       en: "Tropical",
@@ -75,7 +93,10 @@ const flavors = [
     },
   },
   {
-    name: "🍓 Frutos Rojos",
+    name: {
+      es: "🍓 Frutos Rojos",
+      en: "🍓 Red Berries",
+    },
     badge: {
       es: "Frutal",
       en: "Fruity",
@@ -86,7 +107,10 @@ const flavors = [
     },
   },
   {
-    name: "🌿 Menta",
+    name: {
+      es: "🌿 Menta",
+      en: "🌿 Mint",
+    },
     badge: {
       es: "Fresco",
       en: "Fresh",
@@ -97,7 +121,10 @@ const flavors = [
     },
   },
   {
-    name: "🥭 Mango",
+    name: {
+      es: "🥭 Mango",
+      en: "🥭 Mango",
+    },
     badge: {
       es: "Tropical",
       en: "Tropical",
@@ -108,7 +135,10 @@ const flavors = [
     },
   },
   {
-    name: "🥭 Maracuyá",
+    name: {
+      es: "🥭 Maracuyá",
+      en: "🥭 Passion Fruit",
+    },
     badge: {
       es: "Exótico",
       en: "Exotic",
@@ -119,18 +149,10 @@ const flavors = [
     },
   },
   {
-    name: "🌿 Menta Suave",
-    badge: {
-      es: "Ligero",
-      en: "Light",
+    name: {
+      es: "🍇 Uva",
+      en: "🍇 Grape",
     },
-    description: {
-      es: "Refrescante pero más delicado que la menta clásica.",
-      en: "Refreshing but more delicate than classic mint.",
-    },
-  },
-  {
-    name: "🍇 Uva",
     badge: {
       es: "Intenso",
       en: "Intense",
@@ -141,7 +163,10 @@ const flavors = [
     },
   },
   {
-    name: "🫐 Arándanos",
+    name: {
+      es: "🫐 Arándanos",
+      en: "🫐 Blueberries",
+    },
     badge: {
       es: "Premium",
       en: "Premium",
@@ -152,7 +177,10 @@ const flavors = [
     },
   },
   {
-    name: "🍉 Sandía",
+    name: {
+      es: "🍉 Sandía",
+      en: "🍉 Watermelon",
+    },
     badge: {
       es: "Refrescante",
       en: "Refreshing",
@@ -163,7 +191,10 @@ const flavors = [
     },
   },
   {
-    name: "🍈 Melón",
+    name: {
+      es: "🍈 Melón",
+      en: "🍈 Melon",
+    },
     badge: {
       es: "Dulce",
       en: "Sweet",
@@ -174,7 +205,10 @@ const flavors = [
     },
   },
   {
-    name: "🍋 Lima",
+    name: {
+      es: "🍋 Lima",
+      en: "🍋 Lime",
+    },
     badge: {
       es: "Cítrico",
       en: "Citrus",
@@ -185,7 +219,10 @@ const flavors = [
     },
   },
   {
-    name: "🫧 Chicle",
+    name: {
+      es: "🫧 Chicle",
+      en: "🫧 Bubblegum",
+    },
     badge: {
       es: "Especial",
       en: "Special",
@@ -196,7 +233,10 @@ const flavors = [
     },
   },
   {
-    name: "🍰 Tarta de Queso",
+    name: {
+      es: "🍰 Tarta de Queso",
+      en: "🍰 Cheesecake",
+    },
     badge: {
       es: "Exclusivo",
       en: "Exclusive",
@@ -207,7 +247,10 @@ const flavors = [
     },
   },
   {
-    name: "🍏 Doble Manzana",
+    name: {
+      es: "🍏 Doble Manzana",
+      en: "🍏 Double Apple",
+    },
     badge: {
       es: "Clásico",
       en: "Classic",
@@ -387,7 +430,7 @@ export default function Flavors() {
                 className="text-3xl font-bold mt-4 mb-5"
                 style={{ color: "#B08D57" }}
               >
-                {favorite.name}
+                {favorite.name[language]}
               </h4>
 
               <p
@@ -398,8 +441,6 @@ export default function Flavors() {
               </p>
 
             </div>
-
-            {/* FLECHA IZQUIERDA */}
 
             <button
               type="button"
@@ -433,8 +474,6 @@ export default function Flavors() {
             >
               <ChevronLeft size={26} />
             </button>
-
-            {/* FLECHA DERECHA */}
 
             <button
               type="button"
@@ -470,8 +509,6 @@ export default function Flavors() {
             </button>
 
           </div>
-
-          {/* INDICADORES */}
 
           <div className="flex justify-center gap-2 mt-8">
 
@@ -549,7 +586,7 @@ export default function Flavors() {
               className="text-3xl font-semibold mb-4"
               style={{ color: "#B08D57" }}
             >
-              {flavor.name}
+              {flavor.name[language]}
             </h4>
 
             <span
@@ -567,8 +604,6 @@ export default function Flavors() {
             </p>
 
           </div>
-
-          {/* FLECHA IZQUIERDA */}
 
           <button
             type="button"
@@ -602,8 +637,6 @@ export default function Flavors() {
           >
             <ChevronLeft size={26} />
           </button>
-
-          {/* FLECHA DERECHA */}
 
           <button
             type="button"
@@ -639,8 +672,6 @@ export default function Flavors() {
           </button>
 
         </div>
-
-        {/* INDICADORES */}
 
         <div className="flex justify-center gap-2 mt-8">
 
