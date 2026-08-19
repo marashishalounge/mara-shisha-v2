@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -6,9 +6,9 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 const favorites = [
   {
-    name: "🍓 Love 66",
+    name: "?? Love 66",
     badge: {
-      es: "⭐ Más pedido",
+      es: "? M�s pedido",
       en: "? Most popular",
     },
     description: {
@@ -17,20 +17,20 @@ const favorites = [
     },
   },
   {
-    name: "🍓 Frutos Rojos",
+    name: "?? Frutos Rojos",
     badge: {
-      es: "⭐ Más pedido",
+      es: "? M�s pedido",
       en: "? Most popular",
     },
     description: {
-      es: "Una combinación intensa de frutas rojas con un aroma elegante y equilibrado.",
+      es: "Una combinaci�n intensa de frutas rojas con un aroma elegante y equilibrado.",
       en: "An intense combination of red berries with an elegant and balanced aroma.",
     },
   },
   {
-    name: "🥭 Mango",
+    name: "?? Mango",
     badge: {
-      es: "⭐ Más pedido",
+      es: "? M�s pedido",
       en: "? Most popular",
     },
     description: {
@@ -39,9 +39,9 @@ const favorites = [
     },
   },
   {
-    name: "🍉 Sandía",
+    name: "?? Sand�a",
     badge: {
-      es: "⭐ Más pedido",
+      es: "? M�s pedido",
       en: "? Most popular",
     },
     description: {
@@ -50,13 +50,13 @@ const favorites = [
     },
   },
   {
-    name: "🍬 Chicle",
+    name: "?? Chicle",
     badge: {
       es: "? Especial",
       en: "? Special",
     },
     description: {
-      es: "Un sabor divertido y diferente con un toque dulce y nostálgico.",
+      es: "Un sabor divertido y diferente con un toque dulce y nost�lgico.",
       en: "A fun and different flavour with a sweet and nostalgic touch.",
     },
   },
@@ -64,7 +64,7 @@ const favorites = [
 
 const flavors = [
   {
-    name: "🍓 Love 66",
+    name: "?? Love 66",
     badge: {
       es: "Tropical",
       en: "Tropical",
@@ -75,7 +75,7 @@ const flavors = [
     },
   },
   {
-    name: "🍓 Frutos Rojos",
+    name: "?? Frutos Rojos",
     badge: {
       es: "Frutal",
       en: "Fruity",
@@ -86,51 +86,51 @@ const flavors = [
     },
   },
   {
-    name: "🌿 Menta",
+    name: "?? Menta",
     badge: {
       es: "Fresco",
       en: "Fresh",
     },
     description: {
-      es: "Sensación fría y limpia, perfecta para combinar.",
+      es: "Sensaci�n fr�a y limpia, perfecta para combinar.",
       en: "A cool and clean sensation, perfect for mixing.",
     },
   },
   {
-    name: "🥭 Mango",
+    name: "?? Mango",
     badge: {
       es: "Tropical",
       en: "Tropical",
     },
     description: {
-      es: "Dulce y exótico con un sabor suave.",
+      es: "Dulce y ex�tico con un sabor suave.",
       en: "Sweet and exotic with a smooth flavour.",
     },
   },
   {
-    name: "🥭 Maracuyá",
+    name: "?? Maracuy�",
     badge: {
-      es: "Exótico",
+      es: "Ex�tico",
       en: "Exotic",
     },
     description: {
-      es: "Toque cítrico tropical con mucha personalidad.",
+      es: "Toque c�trico tropical con mucha personalidad.",
       en: "A tropical citrus touch with plenty of character.",
     },
   },
   {
-    name: "🌿 Menta Suave",
+    name: "?? Menta Suave",
     badge: {
       es: "Ligero",
       en: "Light",
     },
     description: {
-      es: "Refrescante pero más delicado que la menta clásica.",
+      es: "Refrescante pero m�s delicado que la menta cl�sica.",
       en: "Refreshing but more delicate than classic mint.",
     },
   },
   {
-    name: "🍇 Uva",
+    name: "?? Uva",
     badge: {
       es: "Intenso",
       en: "Intense",
@@ -141,18 +141,18 @@ const flavors = [
     },
   },
   {
-    name: "🫐 Arándanos",
+    name: "?? Ar�ndanos",
     badge: {
       es: "Premium",
       en: "Premium",
     },
     description: {
-      es: "Sabor suave, dulce y muy aromático.",
+      es: "Sabor suave, dulce y muy arom�tico.",
       en: "Smooth, sweet and highly aromatic flavour.",
     },
   },
   {
-    name: "🌿 Hierbabuena",
+    name: "?? Hierbabuena",
     badge: {
       es: "Natural",
       en: "Natural",
@@ -163,7 +163,7 @@ const flavors = [
     },
   },
   {
-    name: "🍉 Sandía",
+    name: "?? Sand�a",
     badge: {
       es: "Refrescante",
       en: "Refreshing",
@@ -174,31 +174,31 @@ const flavors = [
     },
   },
   {
-    name: "🍈 Melón",
+    name: "?? Mel�n",
     badge: {
       es: "Dulce",
       en: "Sweet",
     },
     description: {
-      es: "Suave y equilibrado para cualquier combinación.",
+      es: "Suave y equilibrado para cualquier combinaci�n.",
       en: "Smooth and balanced for any combination.",
     },
   },
   {
-    name: "🍍 Piña",
+    name: "?? Pi�a",
     badge: {
       es: "Caribe",
       en: "Caribbean",
     },
     description: {
-      es: "Tropical con un toque ácido muy agradable.",
+      es: "Tropical con un toque �cido muy agradable.",
       en: "Tropical with a pleasant tangy touch.",
     },
   },
   {
-    name: "🥥 Coco",
+    name: "?? Coco",
     badge: {
-      es: "Exótico",
+      es: "Ex�tico",
       en: "Exotic",
     },
     description: {
@@ -207,18 +207,18 @@ const flavors = [
     },
   },
   {
-    name: "🍋 Lima",
+    name: "?? Lima",
     badge: {
-      es: "Cítrico",
+      es: "C�trico",
       en: "Citrus",
     },
     description: {
-      es: "Fresca e intensa con un toque ácido.",
+      es: "Fresca e intensa con un toque �cido.",
       en: "Fresh and intense with a tangy touch.",
     },
   },
   {
-    name: "🍬 Chicle",
+    name: "?? Chicle",
     badge: {
       es: "Especial",
       en: "Special",
@@ -229,13 +229,13 @@ const flavors = [
     },
   },
   {
-    name: "🍰 Tarta de Queso",
+    name: "?? Tarta de Queso",
     badge: {
       es: "Exclusivo",
       en: "Exclusive",
     },
     description: {
-      es: "Una mezcla cremosa inspirada en un clásico de la repostería.",
+      es: "Una mezcla cremosa inspirada en un cl�sico de la reposter�a.",
       en: "A creamy blend inspired by a classic dessert.",
     },
   },
@@ -253,52 +253,6 @@ export default function Flavors() {
   const [flavorTouchEnd, setFlavorTouchEnd] = useState<number | null>(null);
 
   const minSwipeDistance = 50;
-
-  const handleFavoriteTouchStart = (e: React.TouchEvent) => {
-    setFavoriteTouchStart(e.targetTouches[0].clientX);
-    setFavoriteTouchEnd(null);
-  };
-
-  const handleFavoriteTouchMove = (e: React.TouchEvent) => {
-    setFavoriteTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleFavoriteTouchEnd = () => {
-    if (favoriteTouchStart === null || favoriteTouchEnd === null) return;
-
-    const distance = favoriteTouchStart - favoriteTouchEnd;
-
-    if (Math.abs(distance) < minSwipeDistance) return;
-
-    if (distance > 0) {
-      nextFavorite();
-    } else {
-      previousFavorite();
-    }
-  };
-
-  const handleFlavorTouchStart = (e: React.TouchEvent) => {
-    setFlavorTouchStart(e.targetTouches[0].clientX);
-    setFlavorTouchEnd(null);
-  };
-
-  const handleFlavorTouchMove = (e: React.TouchEvent) => {
-    setFlavorTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleFlavorTouchEnd = () => {
-    if (flavorTouchStart === null || flavorTouchEnd === null) return;
-
-    const distance = flavorTouchStart - flavorTouchEnd;
-
-    if (Math.abs(distance) < minSwipeDistance) return;
-
-    if (distance > 0) {
-      nextFlavor();
-    } else {
-      previousFlavor();
-    }
-  };
 
   const nextFavorite = () => {
     setFavoriteCurrent((prev) =>
@@ -322,6 +276,58 @@ export default function Flavors() {
     setFlavorCurrent((prev) =>
       prev === 0 ? flavors.length - 1 : prev - 1
     );
+  };
+
+  const handleFavoriteTouchStart = (e: React.TouchEvent) => {
+    setFavoriteTouchStart(e.targetTouches[0].clientX);
+    setFavoriteTouchEnd(null);
+  };
+
+  const handleFavoriteTouchMove = (e: React.TouchEvent) => {
+    setFavoriteTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleFavoriteTouchEnd = () => {
+    if (favoriteTouchStart === null || favoriteTouchEnd === null) return;
+
+    const distance = favoriteTouchStart - favoriteTouchEnd;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      nextFavorite();
+    } else {
+      previousFavorite();
+    }
+
+    setFavoriteTouchStart(null);
+    setFavoriteTouchEnd(null);
+  };
+
+  const handleFlavorTouchStart = (e: React.TouchEvent) => {
+    setFlavorTouchStart(e.targetTouches[0].clientX);
+    setFlavorTouchEnd(null);
+  };
+
+  const handleFlavorTouchMove = (e: React.TouchEvent) => {
+    setFlavorTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleFlavorTouchEnd = () => {
+    if (flavorTouchStart === null || flavorTouchEnd === null) return;
+
+    const distance = flavorTouchStart - flavorTouchEnd;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance > 0) {
+      nextFlavor();
+    } else {
+      previousFlavor();
+    }
+
+    setFlavorTouchStart(null);
+    setFlavorTouchEnd(null);
   };
 
   const favorite = favorites[favoriteCurrent];
@@ -361,7 +367,7 @@ export default function Flavors() {
 
         </div>
 
-        {/* SABORES MÁS PEDIDOS */}
+        {/* SABORES M�S PEDIDOS */}
 
         <div className="mb-20">
 
@@ -370,8 +376,8 @@ export default function Flavors() {
             style={{ color: "#B08D57" }}
           >
             {language === "es"
-              ? "⭐ Sabores más pedidos"
-              : "⭐ Most popular flavours"}
+              ? "? Sabores m�s pedidos"
+              : "? Most popular flavours"}
           </h3>
 
           <div className="relative max-w-xl mx-auto">
@@ -381,10 +387,7 @@ export default function Flavors() {
                 rounded-3xl
                 border
                 border-[#B08D57]/40
-              touch-pan-y
-              onTouchStart={handleFavoriteTouchStart}
-              onTouchMove={handleFavoriteTouchMove}
-              onTouchEnd={handleFavoriteTouchEnd}
+                touch-pan-y
                 bg-zinc-950
                 p-8
                 md:p-10
@@ -394,6 +397,9 @@ export default function Flavors() {
                 justify-center
                 text-center
               "
+              onTouchStart={handleFavoriteTouchStart}
+              onTouchMove={handleFavoriteTouchMove}
+              onTouchEnd={handleFavoriteTouchEnd}
             >
 
               <h4
@@ -419,7 +425,7 @@ export default function Flavors() {
               onClick={previousFavorite}
               aria-label={
                 language === "es"
-                  ? "Sabor más pedido anterior"
+                  ? "Sabor m�s pedido anterior"
                   : "Previous popular flavour"
               }
               className="
@@ -454,7 +460,7 @@ export default function Flavors() {
               onClick={nextFavorite}
               aria-label={
                 language === "es"
-                  ? "Siguiente sabor más pedido"
+                  ? "Siguiente sabor m�s pedido"
                   : "Next popular flavour"
               }
               className="
@@ -496,7 +502,7 @@ export default function Flavors() {
                 onClick={() => setFavoriteCurrent(index)}
                 aria-label={
                   language === "es"
-                    ? `Ir al sabor más pedido ${index + 1}`
+                    ? `Ir al sabor m�s pedido ${index + 1}`
                     : `Go to popular flavour ${index + 1}`
                 }
                 className="h-2 rounded-full transition-all duration-300"
@@ -544,9 +550,6 @@ export default function Flavors() {
               border
               border-[#B08D57]/30
               touch-pan-y
-              onTouchStart={handleFlavorTouchStart}
-              onTouchMove={handleFlavorTouchMove}
-              onTouchEnd={handleFlavorTouchEnd}
               bg-zinc-950
               p-8
               md:p-10
@@ -556,6 +559,9 @@ export default function Flavors() {
               justify-center
               text-center
             "
+            onTouchStart={handleFlavorTouchStart}
+            onTouchMove={handleFlavorTouchMove}
+            onTouchEnd={handleFlavorTouchEnd}
           >
 
             <h4
@@ -696,18 +702,3 @@ export default function Flavors() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
