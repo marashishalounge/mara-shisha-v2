@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -109,11 +109,11 @@ export default function Drinks() {
           </span>
 
           <h2
-            className="text-5xl font-bold mt-4 mb-6"
-            style={{ color: "#B08D57" }}
-          >
-            {t.drinks.titulo}
-          </h2>
+  className="text-5xl font-bold mt-4 mb-6"
+  style={{ color: "#B08D57" }}
+>
+  🍹 {t.drinks.titulo}
+</h2>
 
           <p
             className="max-w-3xl mx-auto leading-8"
