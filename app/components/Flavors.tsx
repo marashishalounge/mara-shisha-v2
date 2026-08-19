@@ -64,7 +64,7 @@ const favorites = [
 
 const flavors = [
   {
-    name: "💨 Love 66",
+    name: "🍓 Love 66",
     badge: {
       es: "Tropical",
       en: "Tropical",
