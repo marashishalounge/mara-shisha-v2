@@ -13,49 +13,49 @@ export default function Beers() {
     language === "en"
       ? [
           {
-            title: "ðŸº Draft",
+            title: "🍺 Draft",
             items: [
-              ["ðŸº Amstel Pint", "€1.80"],
-              ["ðŸº Amstel Jug", "€3.00"],
+              ["🍺 Amstel Pint", "€1.80"],
+              ["🍺 Amstel Jug", "€3.00"],
             ],
           },
           {
             title: "🍺 National",
             items: [
-              ["ðŸº Estrella Galicia 1/5", "€1.90"],
-              ["ðŸº Amstel 1/3", "€2.50"],
+              ["🍺 Estrella Galicia 1/5", "€1.90"],
+              ["🍺 Amstel 1/3", "€2.50"],
             ],
           },
           {
-            title: "??€ International",
+            title: "🍺 International",
             items: [
-              ["ðŸº Heineken", "€3.00"],
-              ["ðŸº Corona", "€3.00"],
-              ["ðŸº Budweiser", "€3.00"],
+              ["🍺 Heineken", "€3.00"],
+              ["🍺 Corona", "€3.00"],
+              ["🍺 Budweiser", "€3.00"],
             ],
           },
         ]
       : [
           {
-            title: "ðŸº Barril",
+            title: "🍺 Barril",
             items: [
-              ["ðŸº Amstel Ca€a", "1,80€"],
-              ["ðŸº Amstel Jarra", "3,00€"],
+              ["🍺 Amstel Caña", "1,80€"],
+              ["🍺 Amstel Jarra", "3,00€"],
             ],
           },
           {
             title: "🍺 Nacionales",
             items: [
-              ["ðŸº Estrella Galicia 1/5", "1,90€"],
-              ["ðŸº Amstel 1/3", "2,50€"],
+              ["🍺 Estrella Galicia 1/5", "1,90€"],
+              ["🍺 Amstel 1/3", "2,50€"],
             ],
           },
           {
-            title: "??€ Internacionales",
+            title: "🍺 Internacionales",
             items: [
-              ["ðŸº Heineken", "3,00€"],
-              ["ðŸº Corona", "3,00€"],
-              ["ðŸº Budweiser", "3,00€"],
+              ["🍺 Heineken", "3,00€"],
+              ["🍺 Corona", "3,00€"],
+              ["🍺 Budweiser", "3,00€"],
             ],
           },
         ];
@@ -82,8 +82,6 @@ export default function Beers() {
     setTouchEnd(null);
   };
 
-  
-
   const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
@@ -104,6 +102,7 @@ export default function Beers() {
     setTouchStart(null);
     setTouchEnd(null);
   };
+
   const beer = beerCategories[current];
 
   return (
@@ -119,7 +118,7 @@ export default function Beers() {
           className="text-4xl font-bold text-center mb-4"
           style={{ color: "#B08D57" }}
         >
-          ðŸº {language === "en" ? "Beers" : "Cervezas"}
+          🍺 {language === "en" ? "Beers" : "Cervezas"}
         </h2>
 
         <p
@@ -128,7 +127,7 @@ export default function Beers() {
         >
           {language === "en"
             ? "Enjoy our selection of cold beers at Mara Shisha Lounge."
-            : "Una selecci€n de cervezas fr€as para disfrutar en Mara Shisha Lounge."}
+            : "Una selección de cervezas frías para disfrutar en Mara Shisha Lounge."}
         </p>
 
         {/* CARRUSEL */}
@@ -209,7 +208,7 @@ export default function Beers() {
             aria-label={
               language === "en"
                 ? "Previous beer category"
-                : "Categor€a de cerveza anterior"
+                : "Categoría de cerveza anterior"
             }
             className="
               absolute
@@ -246,7 +245,7 @@ export default function Beers() {
             aria-label={
               language === "en"
                 ? "Next beer category"
-                : "Siguiente categor€a de cerveza"
+                : "Siguiente categoría de cerveza"
             }
             className="
               absolute
@@ -290,7 +289,7 @@ export default function Beers() {
               aria-label={
                 language === "en"
                   ? `Go to beer category ${index + 1}`
-                  : `Ir a categor€a ${index + 1}`
+                  : `Ir a categoría ${index + 1}`
               }
               className="h-2 rounded-full transition-all duration-300"
               style={{
@@ -322,14 +321,3 @@ export default function Beers() {
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
