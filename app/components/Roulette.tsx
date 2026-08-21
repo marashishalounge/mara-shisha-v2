@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -7,27 +7,27 @@ import { supabase } from "../../lib/supabase";
 const premios = [
   {
     clave: "chupito",
-    emoji: "🥃",
+    emoji: "??",
     ganador: true,
   },
   {
     clave: "cuboEstrellaGalicia",
-    emoji: "🍺",
+    emoji: "??",
     ganador: true,
   },
   {
     clave: "copa",
-    emoji: "🍹",
+    emoji: "??",
     ganador: true,
   },
   {
     clave: "shishaClasica",
-    emoji: "💨",
+    emoji: "??",
     ganador: true,
   },
   {
     clave: "sigueParticipando",
-    emoji: "✨",
+    emoji: "?",
     ganador: false,
   },
 ];
@@ -152,7 +152,7 @@ export default function Roulette() {
 
       if (indiceGanador === -1) {
         throw new Error(
-          "Supabase devolvió un premio no reconocido."
+          "Supabase devolvi� un premio no reconocido."
         );
       }
 
@@ -187,7 +187,7 @@ export default function Roulette() {
       console.error(error);
 
       setError(
-        "No hemos podido realizar la tirada. Inténtalo de nuevo."
+        "No hemos podido realizar la tirada. Int�ntalo de nuevo."
       );
 
       setGirando(false);
@@ -343,7 +343,7 @@ export default function Roulette() {
                       `mara-spark ${1 + (index % 4) * 0.3}s ease-in-out ${(index % 10) * 0.12}s infinite`,
                   }}
                 >
-                  ✦
+                  ?
                 </span>
               );
             }
@@ -423,7 +423,7 @@ export default function Roulette() {
           </div>
 
           <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-[#B08D57] text-4xl font-bold z-20">
-            ▼
+            ?
           </div>
         </div>
 
@@ -459,7 +459,7 @@ export default function Roulette() {
           >
             <p className="text-[#B08D57] text-sm tracking-widest">
               {celebracion
-                ? `🎉 ${t.roulette.ganado} 🎉`
+                ? `?? ${t.roulette.ganado} ??`
                 : t.roulette.premio}
             </p>
 
