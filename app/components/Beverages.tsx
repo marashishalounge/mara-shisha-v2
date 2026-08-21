@@ -10,18 +10,20 @@ export default function Beverages() {
   const [current, setCurrent] = useState(0);
 
   const beverageCategories = [
-    {
+        {
       id: "frias",
       emoji: "🧊",
       title: t.beverages.frias,
-         items: [
-        [`🍵 ${t.beverages.teVerdeMoruno}`, "1,80 €"],
-        [`🍓 ${t.beverages.teRojoFrutas}`, "1,80 €"],
-        [`❤️ ${t.beverages.teRooibos}`, "1,80 €"],
-        [`🌿 ${t.beverages.poleoMenta}`, "1,80 €"],
-        [`🍃 ${t.beverages.teVerdeHierbabuena}`, "1,80 €"],
-      
+      items: [
+        [`🥤 ${t.beverages.cola}`, "2,50 €"],
+        [`🧋 ${t.beverages.nestea}`, "2,50 €"],
+        [`🥤 ${t.beverages.aquarius}`, "2,50 €"],
+        [`🧃 ${t.beverages.zumos}`, "2,50 €"],
+        [`💧 ${t.beverages.aguaGas}`, "2,50 €"],
+        [`💧 ${t.beverages.agua}`, "2,00 €"],
+        [`⚡ ${t.beverages.energeticas}`, "3,00 €"],
       ],
+    
     },
     {
       id: "calientes",
