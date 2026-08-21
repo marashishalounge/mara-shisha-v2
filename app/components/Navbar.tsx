@@ -23,7 +23,7 @@ export default function Navbar() {
           className="text-2xl font-bold tracking-wide transition-all duration-300 hover:scale-105"
           style={{ color: "var(--bronze)" }}
         >
-          Mara Shisha
+          Mara Shisha lounge
         </a>
 
         {/* MENÚ ESCRITORIO */}
