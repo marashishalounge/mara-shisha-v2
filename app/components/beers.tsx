@@ -9,56 +9,61 @@ export default function Beers() {
 
   const [current, setCurrent] = useState(0);
 
-  const beerCategories =
-    language === "en"
-      ? [
-          {
-            title: "🍺 Draft",
-            items: [
-              ["🍺 Amstel Pint", "€1.80"],
-              ["🍺 Amstel Jug", "€3.00"],
-            ],
-          },
-          {
-            title: "🍺 National",
-            items: [
-              ["🍺 Estrella Galicia 1/5", "€1.90"],
-              ["🍺 Amstel 1/3", "€2.50"],
-            ],
-          },
-          {
-            title: "🍺 International",
-            items: [
-              ["🍺 Heineken", "€3.00"],
-              ["🍺 Corona", "€3.00"],
-              ["🍺 Budweiser", "€3.00"],
-            ],
-          },
-        ]
-      : [
-          {
-            title: "🍺 Barril",
-            items: [
-              ["🍺 Amstel Caña", "1,80€"],
-              ["🍺 Amstel Jarra", "3,00€"],
-            ],
-          },
-          {
-            title: "🍺 Nacionales",
-            items: [
-              ["🍺 Estrella Galicia 1/5", "1,90€"],
-              ["🍺 Amstel 1/3", "2,50€"],
-            ],
-          },
-          {
-            title: "🍺 Internacionales",
-            items: [
-              ["🍺 Heineken", "3,00€"],
-              ["🍺 Corona", "3,00€"],
-              ["🍺 Budweiser", "3,00€"],
-            ],
-          },
-        ];
+ const beerCategories =
+  language === "en"
+    ? [
+        {
+          title: "🍺 Draft",
+          items: [
+            ["🍺 Amstel Pint", "€1.80"],
+            ["🍺 Amstel Jug", "€3.00"],
+          ],
+        },
+        {
+          title: "🇪🇸 National",
+          items: [
+            ["🍺 Estrella Galicia 1/5", "€1.90"],
+            ["🍺 Amstel 1/3", "€2.50"],
+            ["🍺 Alcohol-free 00", "€3.00"],
+            ["🍺 Radler", "€3.00"],
+          ],
+        },
+        {
+          title: "🌎 International",
+          items: [
+            ["🍺 Heineken", "€3.00"],
+            ["🍺 Corona", "€3.00"],
+            ["🍺 Budweiser", "€3.00"],
+          ],
+        },
+      ]
+    : [
+        {
+          title: "🍺 Barril",
+          items: [
+            ["🍺 Amstel Caña", "1,80€"],
+            ["🍺 Amstel Jarra", "3,00€"],
+          ],
+        },
+        {
+          title: "🇪🇸 Nacionales",
+          items: [
+            ["🍺 Estrella Galicia 1/5", "1,90€"],
+            ["🍺 Amstel 1/3", "2,50€"],
+            ["🍺 Sin alcohol 00", "3,00€"],
+            ["🍺 Radler", "3,00€"],
+          ],
+        },
+        {
+          title: "🌎 Internacionales",
+          items: [
+            ["🍺 Heineken", "3,00€"],
+            ["🍺 Corona", "3,00€"],
+            ["🍺 Budweiser", "3,00€"],
+          ],
+        },
+      ]
+          
 
   const nextSlide = () => {
     setCurrent((prev) =>
