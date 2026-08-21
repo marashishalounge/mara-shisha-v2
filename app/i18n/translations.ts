@@ -162,10 +162,11 @@ export const translations = {
 
       calientes: "Bebidas calientes",
 
-      teVerde: "Té verde",
-      teMoruno: "Té moruno",
-      teLimon: "Té limón",
-      infusiones: "Infusiones",
+      teVerdeMoruno: "Té verde moruno",
+      teRojoFrutas: "Té rojo con frutas",
+      teRooibos: "Té rojo Rooibos",
+      poleoMenta: "Poleo menta",
+      teVerdeHierbabuena: "Té verde hierbabuena",
 
       anterior: "Bebida anterior",
       siguiente: "Siguiente bebida",
@@ -400,10 +401,11 @@ export const translations = {
 
       calientes: "Hot drinks",
 
-      teVerde: "Green tea",
-      teMoruno: "Moroccan tea",
-      teLimon: "Lemon tea",
-      infusiones: "Herbal teas",
+      teVerdeMoruno: "Moroccan green tea",
+      teRojoFrutas: "Red tea with fruits",
+      teRooibos: "Rooibos red tea",
+      poleoMenta: "Pennyroyal mint",
+      teVerdeHierbabuena: "Green tea with spearmint",
 
       anterior: "Previous drink",
       siguiente: "Next drink",
